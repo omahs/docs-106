@@ -5,8 +5,7 @@
 
 ## 💫 Links
 
-* [Community](links/community.md)
-* [GitHub](links/github.md)
+* [🌐 Community Links](links/community.md)
 
 ## 🗺 Getting Started
 
