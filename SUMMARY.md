@@ -22,13 +22,12 @@
   * [Claims](primitives-and-interactions/primitives/claims.md)
 * [Interacations](primitives-and-interactions/interacations/README.md)
   * [Attestations](primitives-and-interactions/interacations/attestations.md)
-  * [Revocation](primitives-and-interactions/interacations/revocation.md)
 
 ## 🌐 Protocol and Contracts
 
-* [Contract Documentation](protocol-and-contracts/contract-documentation.md)
+* [EthMultiVault.sol](protocol-and-contracts/contract-documentation.md)
 * [Interfaces](protocol-and-contracts/interfaces.md)
-* [Audit Reports](protocol-and-contracts/audit-reports.md)
+* [Events](protocol-and-contracts/events.md)
 
 ## 🪄 API
 
