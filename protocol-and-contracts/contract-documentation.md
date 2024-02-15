@@ -86,6 +86,8 @@ mapping(uint256 => mapping(uint256 => mapping(address => uint256)))
 
 #### createAtom
 
+Creates an atom with the given atom data and returns its vault ID. Requires a payment of ETH to cover the atom cost.
+
 ```solidity
 function createAtom(
     bytes calldata atomUri
@@ -96,10 +98,10 @@ function createAtom(
   * `bytes calldata atomData`: The data of the atom to be created.
 * **Outputs**:
   * `uint256 id`: The vault ID of the created atom.
-* **Description**:
-  * Creates an atom with the given atom data and returns its vault ID. Requires a payment of ETH to cover the atom cost.
 
 #### createTriple
+
+Creates a triple from three given atom IDs and returns its vault ID. Requires a payment of ETH to cover the triple cost.
 
 ```solidity
 function createTriple(
@@ -115,10 +117,10 @@ function createTriple(
   * `uint256 objectId`: Vault ID of the object atom.
 * **Outputs**:
   * `uint256 id`: The vault ID of the created triple.
-* **Description**:
-  * Creates a triple from three given atom IDs and returns its vault ID. Requires a payment of ETH to cover the triple cost.
 
 #### depositAtom
+
+Deposits ETH into an atom vault, granting ownership of shares to the specified receiver.
 
 ```solidity
 function depositAtom(
@@ -132,10 +134,10 @@ function depositAtom(
   * `uint256 id`: The vault ID of the atom.
 * **Outputs**:
   * `uint256 shares`: Amount of shares minted.
-* **Description**:
-  * Deposits ETH into an atom vault, granting ownership of shares to the specified receiver.
 
 #### depositTriple
+
+Deposits ETH into a triple vault, granting ownership of shares to the specified receiver.
 
 ```solidity
 function depositTriple(
@@ -149,10 +151,10 @@ function depositTriple(
   * `uint256 id`: The vault ID of the triple.
 * **Outputs**:
   * `uint256 shares`: Amount of shares minted.
-* **Description**:
-  * Deposits ETH into a triple vault, granting ownership of shares to the specified receiver.
 
 #### redeemAtom
+
+Redeems assets from an atom vault in exchange for a specified number of shares. The assets are sent to the specified receiver.
 
 ```solidity
 function redeemAtom(
@@ -167,10 +169,10 @@ function redeemAtom(
   * `address receiver`:
 * **Outputs**:
   * `uint256 assets`: The amount of assets (ETH) withdrawn.
-* **Description**:
-  * Redeems assets from an atom vault in exchange for a specified number of shares. The assets are sent to the specified receiver.
 
 #### redeemTriple
+
+Redeems assets from a triple vault in exchange for a specified number of shares. The assets are sent to the specified receiver.
 
 ```solidity
 function redeemTriple(
@@ -186,12 +188,12 @@ function redeemTriple(
   * `uint256 id`: The vault ID of the triple.
 * **Outputs**:
   * `uint256 assets`: The amount of assets (ETH) withdrawn.
-* **Description**:
-  * Redeems assets from a triple vault in exchange for a specified number of shares. The assets are sent to the specified receiver.
 
 ### Read Methods
 
 #### vaults
+
+A mapping that provides information about all vaults, including total assets and shares.
 
 ```solidity
 struct VaultState {
@@ -207,10 +209,10 @@ mapping(uint256 => VaultState) public vaults;
   * `uint256 id`: Vault ID.
 * **Outputs**:
   * Returns a `VaultState` struct for the corresponding vault ID.
-* **Description**:
-  * A mapping that provides information about all vaults, including total assets and shares.
 
 #### previewDeposit
+
+Simulates the deposit process, giving an estimate of the shares that would be minted from a specified amount of assets.
 
 ```solidity
 function previewDeposit(
@@ -224,10 +226,10 @@ function previewDeposit(
   * `uint256 id`: Vault ID.
 * **Outputs**:
   * `uint256 shares`: Estimated number of shares to be minted from the deposit.
-* **Description**:
-  * Simulates the deposit process, giving an estimate of the shares that would be minted from a specified amount of assets.
 
 #### previewRedeem
+
+Simulates the redemption process, estimating the amount of assets that would be returned for a specified number of shares from a given vault.
 
 ```solidity
 function previewRedeem(
@@ -241,11 +243,10 @@ function previewRedeem(
   * `uint256 id`: Vault ID.
 * **Outputs**:
   * `uint256 assets`: Estimated amount of assets to be returned.
-* \*Description
-* **Description**:
-  * Simulates the redemption process, estimating the amount of assets that would be returned for a specified number of shares from a given vault.
 
 #### maxRedeem
+
+Returns the maximum number of shares that can be redeemed from the specified vault by the given owner.
 
 ```solidity
 function maxRedeem(
@@ -259,10 +260,10 @@ function maxRedeem(
   * `uint256 id`: Vault ID.
 * **Outputs**:
   * `uint256 shares`: Maximum amount of shares that can be redeemed by the specified owner.
-* **Description**:
-  * Returns the maximum number of shares that can be redeemed from the specified vault by the given owner.
 
 #### getVaultBalance
+
+Retrieves the balance of a particular user in a specified vault.
 
 ```solidity
 function getVaultBalance(
@@ -276,10 +277,10 @@ function getVaultBalance(
   * `address user`: Address of the user.
 * **Outputs**:
   * `uint256`: Balance of the user in the specified vault.
-* **Description**:
-  * Retrieves the balance of a particular user in a specified vault.
 
 #### currentSharePrice
+
+Calculates and returns the current price per share in the specified vault.
 
 ```solidity
 function currentSharePrice(
@@ -291,10 +292,10 @@ function currentSharePrice(
   * `uint256 id`: Vault ID.
 * **Outputs**:
   * `uint256 price`: Current share price in the vault.
-* **Description**:
-  * Calculates and returns the current price per share in the specified vault.
 
 #### convertToAssets
+
+Converts a specified number of shares to its equivalent amount in assets for a given vault.
 
 ```solidity
 function convertToAssets(
@@ -308,10 +309,10 @@ function convertToAssets(
   * `uint256 id`: Vault ID.
 * **Outputs**:
   * `uint256 assets`: Equivalent amount of assets for the given shares.
-* **Description**:
-  * Converts a specified number of shares to its equivalent amount in assets for a given vault.
 
 #### convertToShares
+
+Converts a specified amount of assets to its equivalent number of shares in a given vault.
 
 ```solidity
 function convertToShares(
@@ -325,10 +326,10 @@ function convertToShares(
   * `uint256 id`: Vault ID.
 * **Outputs**:
   * `uint256 shares`: Equivalent amount of shares for the given assets.
-* **Description**:
-  * Converts a specified amount of assets to its equivalent number of shares in a given vault.
 
 #### vaultFees
+
+A mapping that provides information about the fees associated with each vault.
 
 ```solidity
 struct VaultFees {
@@ -344,10 +345,10 @@ mapping(uint256 => VaultFees) public vaultFees;
   * `uint256 id`: Vault ID.
 * **Outputs**:
   * Returns a `VaultFees` struct for the corresponding vault ID.
-* **Description**:
-  * A mapping that provides information about the fees associated with each vault.
 
 #### getVaultStates
+
+Returns the states (including total assets and shares) of all vaults.
 
 ```solidity
 function getVaultStates() external view returns (Types.VaultState[] memory states);
@@ -356,10 +357,10 @@ function getVaultStates() external view returns (Types.VaultState[] memory state
 * **Inputs**: None.
 * **Outputs**:
   * `Types.VaultState[] memory states`: An array of `VaultState` structures for all vaults.
-* **Description**:
-  * Returns the states (including total assets and shares) of all vaults.
 
 #### isTriple
+
+Checks if a given vault ID represents a triple.
 
 ```solidity
 
@@ -370,5 +371,3 @@ mapping(uint256 => bool) public isTriple;
   * `uint256 id`: Vault ID.
 * **Outputs**:
   * `bool`: Indicates whether the specified vault ID corresponds to a triple.
-* **Description**:
-  * Checks if a given vault ID represents a triple.
