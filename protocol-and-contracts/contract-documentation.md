@@ -46,10 +46,17 @@ ID of the last vault to be created
     }
 ```
 
-#### tripleAtomShares
+#### VaultFees
 
 ```solidity
-public tripleAtomShares;
+struct VaultFees {
+        // entry fee for vault 0 is considered the default entry fee
+        uint256 entryFee;
+        // exit fee for each vault, exit fee for vault 0 is considered the default exit fee
+        uint256 exitFee;
+        // protocol fee for each vault, protocol fee for vault 0 is considered the default protocol fee
+        uint256 protocolFee;
+    }
 ```
 
 ### Mappings
@@ -59,24 +66,40 @@ mapping(uint256 => VaultState) public vaults;
 ```
 
 ```solidity
+mapping(uint256 => VaultFees) public vaultFees;
+```
+
+#### Vault ID -> Atom Data
+
+```solidity
 mapping(uint256 => bytes) public atoms;
 ```
+
+#### Hash -> Atom ID
 
 ```solidity
 mapping(bytes32 => uint256) public AtomsByHash;
 ```
 
+#### Triple ID -> Vault IDs
+
 ```solidity
 mapping(uint256 => uint256[3]) public triples;
 ```
+
+#### Hash -> Triple ID
 
 ```solidity
 mapping(bytes32 => uint256) public TriplesByHash;
 ```
 
+#### Vault Id -> (Is Triple)
+
 ```solidity
 mapping(uint256 => bool) public isTriple;
 ```
+
+#### Triple ID -> Atom ID -> Account Address -> Atom Balance
 
 ```solidity
 mapping(uint256 => mapping(uint256 => mapping(address => uint256)))
