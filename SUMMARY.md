@@ -23,14 +23,12 @@
 * [Interacations](primitives-and-interactions/interacations/README.md)
   * [Attestations](primitives-and-interactions/interacations/attestations.md)
   * [Revocation](primitives-and-interactions/interacations/revocation.md)
-  * [Staking](primitives-and-interactions/interacations/staking.md)
 
 ## 🌐 Protocol and Contracts
 
 * [Contract Documentation](protocol-and-contracts/contract-documentation.md)
 * [Interfaces](protocol-and-contracts/interfaces.md)
 * [Audit Reports](protocol-and-contracts/audit-reports.md)
-* [Page 1](protocol-and-contracts/page-1.md)
 
 ## 🪄 API
 
