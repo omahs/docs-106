@@ -2,7 +2,7 @@
 description: A collection of Intuition Community Links.
 ---
 
-# 🌐 Community Links
+# 🌐 Community
 
 We're excited to be building with our community of builders and users. We welcome involvement and feedback!&#x20;
 
@@ -23,4 +23,9 @@ We're excited to be building with our community of builders and users. We welcom
 * [Twitter: NEWFORUM Thread on Digital Identity](https://twitter.com/newforum\_nco/status/1709662240327049242?s=20)
 * [Rehash: A Web3 Podcast Episode: Dissecting Identity, Reputation, and Trust w/ Billy Luedtke | S5 E8](https://www.youtube.com/watch?v=SkU-AJRXkBs)
 
-\
+### Getting Help
+
+Please reach out with any questions or if you need any support. We welcome feedback and questions!
+
+* Join our [Discord](https://discord.gg/0xintuition) if you haven't already
+* You can also (Email us) with specific questions and feedback.\

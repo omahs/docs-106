@@ -5,7 +5,7 @@
 
 ## 💫 Links
 
-* [🌐 Community Links](links/community.md)
+* [🌐 Community](links/community.md)
 
 ## 🗺 Getting Started
 
