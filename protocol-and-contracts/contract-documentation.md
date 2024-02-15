@@ -82,7 +82,7 @@ mapping(uint256 => bool) public isTriple;
 mapping(uint256 => mapping(uint256 => mapping(address => uint256)))
 ```
 
-### Write Functions
+### Write Methods
 
 #### createAtom
 
@@ -189,9 +189,186 @@ function redeemTriple(
 * **Description**:
   * Redeems assets from a triple vault in exchange for a specified number of shares. The assets are sent to the specified receiver.
 
+### Read Methods
 
+#### vaults
 
+```solidity
+struct VaultState {
+    uint256 totalAssets;
+    uint256 totalShares;
+    mapping(address => uint256) balanceOf;
+}
 
+mapping(uint256 => VaultState) public vaults;
+```
 
-### Read Functions
+* **Inputs**:
+  * `uint256 id`: Vault ID.
+* **Outputs**:
+  * Returns a `VaultState` struct for the corresponding vault ID.
+* **Description**:
+  * A mapping that provides information about all vaults, including total assets and shares.
 
+#### previewDeposit
+
+```solidity
+function previewDeposit(
+    uint256 assets,
+    uint256 id
+) public view returns (uint256 shares);
+```
+
+* **Inputs**:
+  * `uint256 assets`: Amount of assets to deposit.
+  * `uint256 id`: Vault ID.
+* **Outputs**:
+  * `uint256 shares`: Estimated number of shares to be minted from the deposit.
+* **Description**:
+  * Simulates the deposit process, giving an estimate of the shares that would be minted from a specified amount of assets.
+
+#### previewRedeem
+
+```solidity
+function previewRedeem(
+    uint256 shares,
+    uint256 id
+) public view returns (uint256 assets, uint256 exitFees);
+```
+
+* **Inputs**:
+  * `uint256 shares`: Amount of shares to redeem.
+  * `uint256 id`: Vault ID.
+* **Outputs**:
+  * `uint256 assets`: Estimated amount of assets to be returned.
+* \*Description
+* **Description**:
+  * Simulates the redemption process, estimating the amount of assets that would be returned for a specified number of shares from a given vault.
+
+#### maxRedeem
+
+```solidity
+function maxRedeem(
+    address owner,
+    uint256 id
+) external view returns (uint256 shares);
+```
+
+* **Inputs**:
+  * `address owner`: Address of the account to check.
+  * `uint256 id`: Vault ID.
+* **Outputs**:
+  * `uint256 shares`: Maximum amount of shares that can be redeemed by the specified owner.
+* **Description**:
+  * Returns the maximum number of shares that can be redeemed from the specified vault by the given owner.
+
+#### getVaultBalance
+
+```solidity
+function getVaultBalance(
+        uint256 vaultId,
+        address user
+) external view returns (uint256);
+```
+
+* **Inputs**:
+  * `uint256 vaultId`: ID of the vault.
+  * `address user`: Address of the user.
+* **Outputs**:
+  * `uint256`: Balance of the user in the specified vault.
+* **Description**:
+  * Retrieves the balance of a particular user in a specified vault.
+
+#### currentSharePrice
+
+```solidity
+function currentSharePrice(
+    uint256 id
+) external view returns (uint256 price);
+```
+
+* **Inputs**:
+  * `uint256 id`: Vault ID.
+* **Outputs**:
+  * `uint256 price`: Current share price in the vault.
+* **Description**:
+  * Calculates and returns the current price per share in the specified vault.
+
+#### convertToAssets
+
+```solidity
+function convertToAssets(
+    uint256 shares,
+    uint256 id
+) public view returns (uint256 assets);
+```
+
+* **Inputs**:
+  * `uint256 shares`: Number of shares.
+  * `uint256 id`: Vault ID.
+* **Outputs**:
+  * `uint256 assets`: Equivalent amount of assets for the given shares.
+* **Description**:
+  * Converts a specified number of shares to its equivalent amount in assets for a given vault.
+
+#### convertToShares
+
+```solidity
+function convertToShares(
+    uint256 assets,
+    uint256 id
+) public view returns (uint256 shares);
+```
+
+* **Inputs**:
+  * `uint256 assets`: Amount of assets.
+  * `uint256 id`: Vault ID.
+* **Outputs**:
+  * `uint256 shares`: Equivalent amount of shares for the given assets.
+* **Description**:
+  * Converts a specified amount of assets to its equivalent number of shares in a given vault.
+
+#### vaultFees
+
+```solidity
+struct VaultFees {
+    uint256 entryFee;
+    uint256 exitFee;
+    uint256 protocolFee;
+}
+
+mapping(uint256 => VaultFees) public vaultFees;
+```
+
+* **Inputs**:
+  * `uint256 id`: Vault ID.
+* **Outputs**:
+  * Returns a `VaultFees` struct for the corresponding vault ID.
+* **Description**:
+  * A mapping that provides information about the fees associated with each vault.
+
+#### getVaultStates
+
+```solidity
+function getVaultStates() external view returns (Types.VaultState[] memory states);
+```
+
+* **Inputs**: None.
+* **Outputs**:
+  * `Types.VaultState[] memory states`: An array of `VaultState` structures for all vaults.
+* **Description**:
+  * Returns the states (including total assets and shares) of all vaults.
+
+#### isTriple
+
+```solidity
+
+mapping(uint256 => bool) public isTriple;
+```
+
+* **Inputs**:
+  * `uint256 id`: Vault ID.
+* **Outputs**:
+  * `bool`: Indicates whether the specified vault ID corresponds to a triple.
+* **Description**:
+  * Checks if a given vault ID represents a triple.
