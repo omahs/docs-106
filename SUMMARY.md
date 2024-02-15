@@ -26,8 +26,8 @@
 ## 🌐 Protocol and Contracts
 
 * [EthMultiVault.sol](protocol-and-contracts/contract-documentation.md)
-* [IEthMultiVault.sol Interface](protocol-and-contracts/interfaces.md)
-* [Events](protocol-and-contracts/events.md)
+* [IEthMultiVault.sol Functions](protocol-and-contracts/interfaces.md)
+* [IEthMultiVault.sol Events](protocol-and-contracts/iethmultivault.sol-events.md)
 
 ## 🪄 API
 

@@ -1,10 +1,10 @@
 ---
 description: >-
-  Documentation for the IEthMultiVault.sol Interface in our core
+  Documentation for the IEthMultiVault.sol Interface functions in our core
   EthMultiVault.sol smart contract.
 ---
 
-# IEthMultiVault.sol Interface
+# IEthMultiVault.sol Functions
 
 **Author:** 0xIntuition
 
