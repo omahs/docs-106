@@ -28,6 +28,7 @@
 * [EthMultiVault.sol](protocol-and-contracts/contract-documentation.md)
 * [IEthMultiVault.sol Functions](protocol-and-contracts/interfaces.md)
 * [IEthMultiVault.sol Events](protocol-and-contracts/iethmultivault.sol-events.md)
+* [AtomWallet](protocol-and-contracts/atomwallet.md)
 
 ## 🪄 API
 
