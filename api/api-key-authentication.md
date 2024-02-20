@@ -8,19 +8,25 @@ Your Intuition API Key serves as the cornerstone of authentication when interact
 
 ### Getting Your API Key
 
-(To be added)
+Since your API Key is connected to your Ethereum wallet address, we've created an API Key Portal where you can obtain and view your API Key.
+
+The [Dev Quick Start](../getting-started/dev-quick-start.md) page contains a walkthrough of this process. You can also go directly to the API Key Portal and sign the message.&#x20;
+
+{% hint style="warning" %}
+#### Remember, your API Key is tied to your Ethereum Address that you signed with in the API Key Portal.  Be sure to keep it safe!
+{% endhint %}
 
 ### Authenticating With Your API Key
 
-Once you've obtained your Intuition API Key you can then begin interacting with the Intuition API. You'll need to include a valid API Key as a `header` in every API request.
+Once you've obtained your Intuition API Key you can then begin interacting with the Intuition API. You'll need to include your valid API Key as a `header` in every API request.
 
 Let's look at key points for authenticating with your API Key.
 
-{% hint style="warning" %}
-#### Your API Key is tied to your Ethereum Address that you signed with in the API Key Portal.  Be sure to keep it safe!
-{% endhint %}
-
 #### Including Your API Key in Requests
+
+You'll want to pass in your API Key in the `x-api-key` header, such as:
+
+`x-api-key: YOUR_API_KEY`
 
 Here's how you can use your API Key in a cURL request to the Intuition API, specifically when [fetching Identities](identities/fetch-all-identities.md):thumbsup:
 
@@ -33,7 +39,7 @@ curl "https://dev.intuition-api.com/identities?<Your_Query_Parameters>" \
      -X GET
 ```
 
-Replace the `<Your_API_Key>` with your valid API Key.
+Replace the `<Your_API_Key>` with your valid API Key that you obtained from the API Key Portal.
 {% endtab %}
 {% endtabs %}
 
