@@ -1,0 +1,3480 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "api",
+    "description": "",
+    "license": {
+      "name": ""
+    },
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/attestations": {
+      "get": {
+        "tags": ["attestations"],
+        "operationId": "search_attestations",
+        "responses": {
+          "200": {
+            "description": "Get all attestations in paginated list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["page", "limit", "total", "data"],
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/AttestationPresenter"
+                      }
+                    },
+                    "limit": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "page": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "total": {
+                      "type": "integer",
+                      "format": "int64"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": ["attestations"],
+        "operationId": "create_attestation",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewAttestation"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Create a new attestation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "vault_type",
+                    "vault_id",
+                    "amount_staked",
+                    "creator",
+                    "created_at",
+                    "updated_at",
+                    "status",
+                    "shares",
+                    "assets",
+                    "fee",
+                    "delta_assets"
+                  ],
+                  "properties": {
+                    "amount_staked": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "assets": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "creator": {
+                      "type": "string"
+                    },
+                    "creator_id": {
+                      "type": "string",
+                      "format": "uuid",
+                      "nullable": true
+                    },
+                    "delta_assets": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "fee": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "shares": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/Status"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "vault_id": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "vault_type": {
+                      "$ref": "#/components/schemas/VaultType"
+                    },
+                    "vault_uuid": {
+                      "type": "string",
+                      "format": "uuid",
+                      "nullable": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/attestations/:id": {
+      "get": {
+        "tags": ["attestations"],
+        "operationId": "get_attestation_by_id",
+        "responses": {
+          "200": {
+            "description": "Get single attestation by id",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "vault_type",
+                    "vault_id",
+                    "amount_staked",
+                    "creator",
+                    "created_at",
+                    "updated_at",
+                    "status",
+                    "shares",
+                    "assets",
+                    "fee",
+                    "delta_assets"
+                  ],
+                  "properties": {
+                    "amount_staked": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "assets": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "creator": {
+                      "type": "string"
+                    },
+                    "creator_id": {
+                      "type": "string",
+                      "format": "uuid",
+                      "nullable": true
+                    },
+                    "delta_assets": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "fee": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "shares": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/Status"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "vault_id": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "vault_type": {
+                      "$ref": "#/components/schemas/VaultType"
+                    },
+                    "vault_uuid": {
+                      "type": "string",
+                      "format": "uuid",
+                      "nullable": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": ["attestations"],
+        "operationId": "update_attestation",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAttestation"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Update an attestation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "vault_type",
+                    "vault_id",
+                    "amount_staked",
+                    "creator",
+                    "created_at",
+                    "updated_at",
+                    "status",
+                    "shares",
+                    "assets",
+                    "fee",
+                    "delta_assets"
+                  ],
+                  "properties": {
+                    "amount_staked": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "assets": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "creator": {
+                      "type": "string"
+                    },
+                    "creator_id": {
+                      "type": "string",
+                      "format": "uuid",
+                      "nullable": true
+                    },
+                    "delta_assets": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "fee": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "shares": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/Status"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "vault_id": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "vault_type": {
+                      "$ref": "#/components/schemas/VaultType"
+                    },
+                    "vault_uuid": {
+                      "type": "string",
+                      "format": "uuid",
+                      "nullable": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/auth": {
+      "post": {
+        "tags": ["auth"],
+        "operationId": "auth",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DidQuery"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return JWT token using api key and did session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["token", "refreshToken", "newUser"],
+                  "properties": {
+                    "newUser": {
+                      "type": "boolean"
+                    },
+                    "refreshToken": {
+                      "type": "string"
+                    },
+                    "token": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/claim/:id/positions": {
+      "get": {
+        "tags": ["claim_positions"],
+        "operationId": "get_claim_positions",
+        "responses": {
+          "200": {
+            "description": "Get all claim positions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["page", "limit", "total", "data"],
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/AttestationPresenter"
+                      }
+                    },
+                    "limit": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "page": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "total": {
+                      "type": "integer",
+                      "format": "int64"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/claim/:id/positions/:address": {
+      "get": {
+        "tags": ["claim_positions"],
+        "operationId": "get_user_claim_position",
+        "responses": {
+          "200": {
+            "description": "Get Position by creator address",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["page", "limit", "total", "data"],
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/AttestationPresenter"
+                      }
+                    },
+                    "limit": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "page": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "total": {
+                      "type": "integer",
+                      "format": "int64"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/claims": {
+      "get": {
+        "tags": ["claims"],
+        "operationId": "get_all",
+        "responses": {
+          "200": {
+            "description": "Get all claims in paginated list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["page", "limit", "total", "data"],
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ClaimPresenter"
+                      }
+                    },
+                    "limit": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "page": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "total": {
+                      "type": "integer",
+                      "format": "int64"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": ["claims"],
+        "operationId": "create_claim",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewClaim"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Create a new claim",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "claim_id",
+                    "created_at",
+                    "updated_at",
+                    "status",
+                    "against_num_positions"
+                  ],
+                  "properties": {
+                    "against_num_positions": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "claim_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "counter_vault_id": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "creator": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/User"
+                        }
+                      ],
+                      "nullable": true
+                    },
+                    "object": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/IdentityPresenter"
+                        }
+                      ],
+                      "nullable": true
+                    },
+                    "predicate": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/IdentityPresenter"
+                        }
+                      ],
+                      "nullable": true
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/Status"
+                    },
+                    "subject": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/IdentityPresenter"
+                        }
+                      ],
+                      "nullable": true
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "vault_id": {
+                      "type": "number",
+                      "format": "double"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/claims/:id": {
+      "get": {
+        "tags": ["claims"],
+        "operationId": "get_claim_by_id",
+        "responses": {
+          "200": {
+            "description": "Get single claim by id",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "claim_id",
+                    "created_at",
+                    "updated_at",
+                    "status",
+                    "against_num_positions"
+                  ],
+                  "properties": {
+                    "against_num_positions": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "claim_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "counter_vault_id": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "creator": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/User"
+                        }
+                      ],
+                      "nullable": true
+                    },
+                    "object": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/IdentityPresenter"
+                        }
+                      ],
+                      "nullable": true
+                    },
+                    "predicate": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/IdentityPresenter"
+                        }
+                      ],
+                      "nullable": true
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/Status"
+                    },
+                    "subject": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/IdentityPresenter"
+                        }
+                      ],
+                      "nullable": true
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "vault_id": {
+                      "type": "number",
+                      "format": "double"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": ["claims"],
+        "operationId": "update_claim",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateClaim"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Update a claim",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "claim_id",
+                    "created_at",
+                    "updated_at",
+                    "status",
+                    "against_num_positions"
+                  ],
+                  "properties": {
+                    "against_num_positions": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "claim_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "counter_vault_id": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "creator": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/User"
+                        }
+                      ],
+                      "nullable": true
+                    },
+                    "object": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/IdentityPresenter"
+                        }
+                      ],
+                      "nullable": true
+                    },
+                    "predicate": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/IdentityPresenter"
+                        }
+                      ],
+                      "nullable": true
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/Status"
+                    },
+                    "subject": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/IdentityPresenter"
+                        }
+                      ],
+                      "nullable": true
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "vault_id": {
+                      "type": "number",
+                      "format": "double"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/identities": {
+      "get": {
+        "tags": ["identities"],
+        "operationId": "get_identities",
+        "parameters": [
+          {
+            "name": "displayName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "creator",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "status",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Status"
+                }
+              ],
+              "nullable": true
+            }
+          },
+          {
+            "name": "paging",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/PaginatedRequest"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/IdentitySort"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get all identities in paginated list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["page", "limit", "total", "data"],
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/IdentityPresenter"
+                      }
+                    },
+                    "limit": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "page": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "total": {
+                      "type": "integer",
+                      "format": "int64"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/identities/:id": {
+      "get": {
+        "tags": ["identities"],
+        "operationId": "get_identity_by_id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "sql id",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Identifier"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get single identity by id",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "identity_id",
+                    "identity_hash",
+                    "display_name",
+                    "status",
+                    "created_at",
+                    "num_positions",
+                    "updated_at"
+                  ],
+                  "properties": {
+                    "corpora_id": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "creator": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/User"
+                        }
+                      ],
+                      "nullable": true
+                    },
+                    "description": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "display_name": {
+                      "type": "string"
+                    },
+                    "external_reference": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "identity_hash": {
+                      "type": "string"
+                    },
+                    "identity_id": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "num_positions": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "semantic": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/Status"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": ["identities"],
+        "operationId": "update_identity",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "creator": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "creator_uuid": {
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true
+                  },
+                  "description": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "display_name": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "external_reference": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "identity_id": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Identifier"
+                      }
+                    ],
+                    "nullable": true
+                  },
+                  "image": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "status": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Status"
+                      }
+                    ],
+                    "nullable": true
+                  },
+                  "vault_id": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Identifier"
+                      }
+                    ],
+                    "nullable": true
+                  },
+                  "vault_uuid": {
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Update an identity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "identity_id",
+                    "identity_hash",
+                    "display_name",
+                    "creator",
+                    "created_at",
+                    "updated_at",
+                    "status",
+                    "vault_id"
+                  ],
+                  "properties": {
+                    "corpora_id": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "creator": {
+                      "type": "string"
+                    },
+                    "creator_id": {
+                      "type": "string",
+                      "format": "uuid",
+                      "nullable": true
+                    },
+                    "description": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "display_name": {
+                      "type": "string"
+                    },
+                    "external_reference": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "identity_hash": {
+                      "type": "string"
+                    },
+                    "identity_id": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "semantic": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/Status"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "vault_id": {
+                      "type": "number",
+                      "format": "double"
+                    },
+                    "vault_uuid": {
+                      "type": "string",
+                      "format": "uuid",
+                      "nullable": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/identity": {
+      "post": {
+        "tags": ["identities"],
+        "operationId": "create_identity",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["creator", "display_name"],
+                "properties": {
+                  "creator": {
+                    "type": "string"
+                  },
+                  "creator_uuid": {
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true
+                  },
+                  "description": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "display_name": {
+                    "type": "string"
+                  },
+                  "external_reference": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "identity_hash": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "identity_id": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Identifier"
+                      }
+                    ],
+                    "nullable": true
+                  },
+                  "image_url": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "vault_id": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Identifier"
+                      }
+                    ],
+                    "nullable": true
+                  },
+                  "vault_uuid": {
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Create a new identity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "identity_id",
+                    "identity_hash",
+                    "display_name",
+                    "status",
+                    "created_at",
+                    "num_positions",
+                    "updated_at"
+                  ],
+                  "properties": {
+                    "corpora_id": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "creator": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/User"
+                        }
+                      ],
+                      "nullable": true
+                    },
+                    "description": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "display_name": {
+                      "type": "string"
+                    },
+                    "external_reference": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "identity_hash": {
+                      "type": "string"
+                    },
+                    "identity_id": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "num_positions": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "semantic": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/Status"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/identity/:id/positions": {
+      "get": {
+        "tags": ["identity_positions"],
+        "operationId": "get_identity_positions",
+        "responses": {
+          "200": {
+            "description": "Get all identity positions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["page", "limit", "total", "data"],
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/AttestationPresenter"
+                      }
+                    },
+                    "limit": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "page": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "total": {
+                      "type": "integer",
+                      "format": "int64"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/identity/:id/positions/:address": {
+      "get": {
+        "tags": ["identity_positions"],
+        "operationId": "get_user_identity_position",
+        "responses": {
+          "200": {
+            "description": "Get Position by creator address",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["page", "limit", "total", "data"],
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/AttestationPresenter"
+                      }
+                    },
+                    "limit": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "page": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "total": {
+                      "type": "integer",
+                      "format": "int64"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/query_builder": {
+      "get": {
+        "tags": ["query_builder"],
+        "operationId": "get_query_structure",
+        "responses": {
+          "200": {
+            "description": "Return the query builder data structure for use with FE typeahead"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": ["query_builder"],
+        "operationId": "run_dynamic_query",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataSetQuery"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return query results if the query in body is valid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/IdentityPaginatedResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ClaimPaginatedResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/AttestationPaginatedResponse"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/refresh": {
+      "post": {
+        "tags": ["auth"],
+        "operationId": "refresh",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Refresh JWT and refresh token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["refreshToken"],
+                  "properties": {
+                    "refreshToken": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/revoke": {
+      "post": {
+        "tags": ["auth"],
+        "operationId": "revoke",
+        "responses": {
+          "200": {
+            "description": "Revoke JWT token"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": ["users"],
+        "operationId": "get_users",
+        "responses": {
+          "200": {
+            "description": "Get all users in paginated list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["page", "limit", "total", "data"],
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/UserPresenter"
+                      }
+                    },
+                    "limit": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "page": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "total": {
+                      "type": "integer",
+                      "format": "int64"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": ["users"],
+        "operationId": "create_user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpsertUser"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Create a new user",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "created_at",
+                    "updated_at",
+                    "wallet",
+                    "role"
+                  ],
+                  "properties": {
+                    "api_key": {
+                      "type": "string",
+                      "format": "uuid",
+                      "nullable": true
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "did": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "display_name": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "image": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "last_login": {
+                      "type": "string",
+                      "format": "date-time",
+                      "nullable": true
+                    },
+                    "role": {
+                      "$ref": "#/components/schemas/Role"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "wallet": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/users/:id": {
+      "put": {
+        "tags": ["users"],
+        "operationId": "update_user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpsertUser"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Update a user",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "created_at",
+                    "updated_at",
+                    "wallet",
+                    "role"
+                  ],
+                  "properties": {
+                    "api_key": {
+                      "type": "string",
+                      "format": "uuid",
+                      "nullable": true
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "did": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "display_name": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "image": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "last_login": {
+                      "type": "string",
+                      "format": "date-time",
+                      "nullable": true
+                    },
+                    "role": {
+                      "$ref": "#/components/schemas/Role"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "wallet": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": ["users"],
+        "operationId": "delete_user",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of user to delete",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Delete a user by id",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "created_at",
+                    "updated_at",
+                    "wallet",
+                    "role"
+                  ],
+                  "properties": {
+                    "api_key": {
+                      "type": "string",
+                      "format": "uuid",
+                      "nullable": true
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "did": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "display_name": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "image": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "last_login": {
+                      "type": "string",
+                      "format": "date-time",
+                      "nullable": true
+                    },
+                    "role": {
+                      "$ref": "#/components/schemas/Role"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "wallet": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/users/apikey": {
+      "post": {
+        "tags": ["users"],
+        "operationId": "reissue_api_key",
+        "responses": {
+          "200": {
+            "description": "Re-issue API key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "created_at",
+                    "updated_at",
+                    "wallet",
+                    "role"
+                  ],
+                  "properties": {
+                    "api_key": {
+                      "type": "string",
+                      "format": "uuid",
+                      "nullable": true
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "did": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "display_name": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "image": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "last_login": {
+                      "type": "string",
+                      "format": "date-time",
+                      "nullable": true
+                    },
+                    "role": {
+                      "$ref": "#/components/schemas/Role"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "wallet": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AmountStakedQuery": {
+        "type": "object",
+        "properties": {
+          "combinator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Combinator"
+              }
+            ],
+            "nullable": true
+          },
+          "comparator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NumericComparators"
+              }
+            ],
+            "nullable": true
+          },
+          "options": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "userValue": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        }
+      },
+      "AttestationAttribute": {
+        "oneOf": [
+          {
+            "type": "object",
+            "required": ["vaultId"],
+            "properties": {
+              "vaultId": {
+                "$ref": "#/components/schemas/VaultIdQuery"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["creator"],
+            "properties": {
+              "creator": {
+                "$ref": "#/components/schemas/CreatorQuery"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["status"],
+            "properties": {
+              "status": {
+                "$ref": "#/components/schemas/StatusQuery"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["amountStaked"],
+            "properties": {
+              "amountStaked": {
+                "$ref": "#/components/schemas/AmountStakedQuery"
+              }
+            }
+          },
+          {
+            "type": "string",
+            "enum": ["noOp"]
+          }
+        ]
+      },
+      "AttestationPaginatedResponse": {
+        "type": "object",
+        "required": ["page", "limit", "total", "data"],
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AttestationPresenter"
+            }
+          },
+          "limit": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "page": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "AttestationPresenter": {
+        "type": "object",
+        "required": [
+          "id",
+          "vault_id",
+          "amount_staked",
+          "created_at",
+          "updated_at",
+          "status"
+        ],
+        "properties": {
+          "amount_staked": {
+            "type": "number",
+            "format": "double"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "user": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/User"
+              }
+            ],
+            "nullable": true
+          },
+          "vault_id": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "AttestationSort": {
+        "type": "object",
+        "properties": {
+          "direction": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SortDirection"
+              }
+            ],
+            "nullable": true
+          },
+          "sortBy": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SortColumn"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
+      "ClaimAttribute": {
+        "oneOf": [
+          {
+            "type": "object",
+            "required": ["vaultId"],
+            "properties": {
+              "vaultId": {
+                "$ref": "#/components/schemas/VaultIdQuery"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["counterVaultId"],
+            "properties": {
+              "counterVaultId": {
+                "$ref": "#/components/schemas/CounterVaultIdQuery"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["subjectVaultId"],
+            "properties": {
+              "subjectVaultId": {
+                "$ref": "#/components/schemas/SubjectVaultIdQuery"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["objectVaultId"],
+            "properties": {
+              "objectVaultId": {
+                "$ref": "#/components/schemas/ObjectVaultIdQuery"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["predicateVaultId"],
+            "properties": {
+              "predicateVaultId": {
+                "$ref": "#/components/schemas/PredicateVaultIdQuery"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["status"],
+            "properties": {
+              "status": {
+                "$ref": "#/components/schemas/StatusQuery"
+              }
+            }
+          },
+          {
+            "type": "string",
+            "enum": ["noOp"]
+          }
+        ]
+      },
+      "ClaimPaginatedResponse": {
+        "type": "object",
+        "required": ["page", "limit", "total", "data"],
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClaimPresenter"
+            }
+          },
+          "limit": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "page": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "ClaimPresenter": {
+        "type": "object",
+        "required": [
+          "claim_id",
+          "created_at",
+          "updated_at",
+          "status",
+          "against_num_positions"
+        ],
+        "properties": {
+          "against_num_positions": {
+            "type": "number",
+            "format": "double"
+          },
+          "claim_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "counter_vault_id": {
+            "type": "number",
+            "format": "double"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "creator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/User"
+              }
+            ],
+            "nullable": true
+          },
+          "object": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/IdentityPresenter"
+              }
+            ],
+            "nullable": true
+          },
+          "predicate": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/IdentityPresenter"
+              }
+            ],
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "subject": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/IdentityPresenter"
+              }
+            ],
+            "nullable": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "vault_id": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "ClaimSort": {
+        "type": "object",
+        "properties": {
+          "direction": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SortDirection"
+              }
+            ],
+            "nullable": true
+          },
+          "sortBy": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SortColumn"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
+      "Combinator": {
+        "type": "string",
+        "enum": ["and", "or"]
+      },
+      "CombinedSort": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/IdentitySort"
+          },
+          {
+            "$ref": "#/components/schemas/ClaimSort"
+          },
+          {
+            "$ref": "#/components/schemas/AttestationSort"
+          }
+        ]
+      },
+      "CounterVaultIdQuery": {
+        "type": "object",
+        "properties": {
+          "combinator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Combinator"
+              }
+            ],
+            "nullable": true
+          },
+          "comparator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NumericComparators"
+              }
+            ],
+            "nullable": true
+          },
+          "options": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "userValue": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        }
+      },
+      "CreatorQuery": {
+        "type": "object",
+        "properties": {
+          "combinator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Combinator"
+              }
+            ],
+            "nullable": true
+          },
+          "comparator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringComparators"
+              }
+            ],
+            "nullable": true
+          },
+          "options": {
+            "type": "string",
+            "nullable": true
+          },
+          "userValue": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "DataSetQueries": {
+        "oneOf": [
+          {
+            "type": "object",
+            "required": ["identity"],
+            "properties": {
+              "identity": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/IdentityAttribute"
+                }
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["attestation"],
+            "properties": {
+              "attestation": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AttestationAttribute"
+                }
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["claim"],
+            "properties": {
+              "claim": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ClaimAttribute"
+                }
+              }
+            }
+          },
+          {
+            "type": "string",
+            "enum": ["activity"]
+          }
+        ]
+      },
+      "DataSetQuery": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PaginatedRequest"
+          },
+          {
+            "$ref": "#/components/schemas/DataSetQuerySort"
+          },
+          {
+            "type": "object",
+            "required": ["query"],
+            "properties": {
+              "query": {
+                "$ref": "#/components/schemas/DataSetQueries"
+              }
+            }
+          }
+        ]
+      },
+      "DataSetQuerySort": {
+        "type": "object",
+        "properties": {
+          "direction": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SortDirection"
+              }
+            ],
+            "nullable": true
+          },
+          "sortBy": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CombinedSort"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
+      "DescriptionQuery": {
+        "type": "object",
+        "properties": {
+          "combinator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Combinator"
+              }
+            ],
+            "nullable": true
+          },
+          "comparator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringComparators"
+              }
+            ],
+            "nullable": true
+          },
+          "options": {
+            "type": "string",
+            "nullable": true
+          },
+          "userValue": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "DidQuery": {
+        "type": "object",
+        "required": ["didSession"],
+        "properties": {
+          "didSession": {
+            "type": "string"
+          }
+        }
+      },
+      "DisplayNameQuery": {
+        "type": "object",
+        "properties": {
+          "combinator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Combinator"
+              }
+            ],
+            "nullable": true
+          },
+          "comparator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringComparators"
+              }
+            ],
+            "nullable": true
+          },
+          "options": {
+            "type": "string",
+            "nullable": true
+          },
+          "userValue": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "EnumComparators": {
+        "type": "string",
+        "enum": ["eq", "notEq"]
+      },
+      "ExternalReferenceQuery": {
+        "type": "object",
+        "properties": {
+          "combinator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Combinator"
+              }
+            ],
+            "nullable": true
+          },
+          "comparator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringComparators"
+              }
+            ],
+            "nullable": true
+          },
+          "options": {
+            "type": "string",
+            "nullable": true
+          },
+          "userValue": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "Identifier": {
+        "oneOf": [
+          {
+            "type": "integer",
+            "format": "int64",
+            "minimum": 0
+          },
+          {
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "IdentityAttribute": {
+        "oneOf": [
+          {
+            "type": "object",
+            "required": ["displayName"],
+            "properties": {
+              "displayName": {
+                "$ref": "#/components/schemas/DisplayNameQuery"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["isComplete"],
+            "properties": {
+              "isComplete": {
+                "$ref": "#/components/schemas/IsCompleteQuery"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["creator"],
+            "properties": {
+              "creator": {
+                "$ref": "#/components/schemas/CreatorQuery"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["description"],
+            "properties": {
+              "description": {
+                "$ref": "#/components/schemas/DescriptionQuery"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["identityId"],
+            "properties": {
+              "identityId": {
+                "$ref": "#/components/schemas/IdentityIdQuery"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["semantic"],
+            "properties": {
+              "semantic": {
+                "$ref": "#/components/schemas/SemanticQuery"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["externalReference"],
+            "properties": {
+              "externalReference": {
+                "$ref": "#/components/schemas/ExternalReferenceQuery"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["vaultId"],
+            "properties": {
+              "vaultId": {
+                "$ref": "#/components/schemas/VaultIdQuery"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["status"],
+            "properties": {
+              "status": {
+                "$ref": "#/components/schemas/StatusQuery"
+              }
+            }
+          },
+          {
+            "type": "string",
+            "enum": ["noOp"]
+          }
+        ]
+      },
+      "IdentityIdQuery": {
+        "type": "object",
+        "properties": {
+          "combinator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Combinator"
+              }
+            ],
+            "nullable": true
+          },
+          "comparator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringComparators"
+              }
+            ],
+            "nullable": true
+          },
+          "options": {
+            "type": "string",
+            "nullable": true
+          },
+          "userValue": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "IdentityPaginatedResponse": {
+        "type": "object",
+        "required": ["page", "limit", "total", "data"],
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IdentityPresenter"
+            }
+          },
+          "limit": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "page": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "IdentityPresenter": {
+        "type": "object",
+        "required": [
+          "id",
+          "identity_id",
+          "identity_hash",
+          "display_name",
+          "status",
+          "created_at",
+          "num_positions",
+          "updated_at"
+        ],
+        "properties": {
+          "corpora_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "creator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/User"
+              }
+            ],
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "external_reference": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "identity_hash": {
+            "type": "string"
+          },
+          "identity_id": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string",
+            "nullable": true
+          },
+          "num_positions": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "semantic": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "IdentitySort": {
+        "type": "object",
+        "properties": {
+          "direction": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SortDirection"
+              }
+            ],
+            "nullable": true
+          },
+          "sortBy": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SortColumn"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
+      "IsCompleteQuery": {
+        "type": "object",
+        "properties": {
+          "combinator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Combinator"
+              }
+            ],
+            "nullable": true
+          },
+          "comparator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EnumComparators"
+              }
+            ],
+            "nullable": true
+          },
+          "options": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "userValue": {
+            "type": "boolean",
+            "nullable": true
+          }
+        }
+      },
+      "JsonNum": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "type": "integer",
+            "format": "int64",
+            "minimum": 0
+          }
+        ]
+      },
+      "NewAttestation": {
+        "type": "object",
+        "required": [
+          "creator",
+          "amount_staked",
+          "vault_id",
+          "shares",
+          "assets",
+          "fee",
+          "delta_assets"
+        ],
+        "properties": {
+          "amount_staked": {
+            "type": "number",
+            "format": "double"
+          },
+          "assets": {
+            "type": "number",
+            "format": "double"
+          },
+          "creator": {
+            "type": "string"
+          },
+          "creator_id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "delta_assets": {
+            "type": "number",
+            "format": "double"
+          },
+          "fee": {
+            "type": "number",
+            "format": "double"
+          },
+          "shares": {
+            "type": "number",
+            "format": "double"
+          },
+          "vault_id": {
+            "$ref": "#/components/schemas/Identifier"
+          },
+          "vault_type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/VaultType"
+              }
+            ],
+            "nullable": true
+          },
+          "vault_uuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        }
+      },
+      "NewClaim": {
+        "type": "object",
+        "required": ["creator", "subject", "object", "predicate"],
+        "properties": {
+          "counter_vault_id": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              }
+            ],
+            "nullable": true
+          },
+          "counter_vault_uuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "creator": {
+            "type": "string"
+          },
+          "creator_id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "object": {
+            "$ref": "#/components/schemas/Identifier"
+          },
+          "object_id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "predicate": {
+            "$ref": "#/components/schemas/Identifier"
+          },
+          "predicate_id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "subject": {
+            "$ref": "#/components/schemas/Identifier"
+          },
+          "subject_id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "vault_id": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              }
+            ],
+            "nullable": true
+          },
+          "vault_uuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        }
+      },
+      "NumericComparators": {
+        "type": "string",
+        "enum": ["eq", "lte", "lt", "gt", "gte", "notEq"]
+      },
+      "ObjectVaultIdQuery": {
+        "type": "object",
+        "properties": {
+          "combinator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Combinator"
+              }
+            ],
+            "nullable": true
+          },
+          "comparator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NumericComparators"
+              }
+            ],
+            "nullable": true
+          },
+          "options": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "userValue": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        }
+      },
+      "PaginatedRequest": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/JsonNum"
+              }
+            ],
+            "nullable": true
+          },
+          "offset": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/JsonNum"
+              }
+            ],
+            "nullable": true
+          },
+          "page": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/JsonNum"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
+      "PredicateVaultIdQuery": {
+        "type": "object",
+        "properties": {
+          "combinator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Combinator"
+              }
+            ],
+            "nullable": true
+          },
+          "comparator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NumericComparators"
+              }
+            ],
+            "nullable": true
+          },
+          "options": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "userValue": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        }
+      },
+      "RefreshRequest": {
+        "type": "object",
+        "required": ["refreshToken"],
+        "properties": {
+          "refreshToken": {
+            "type": "string"
+          }
+        }
+      },
+      "Role": {
+        "type": "string",
+        "enum": ["User", "Admin", "Atom"]
+      },
+      "SemanticQuery": {
+        "type": "object",
+        "properties": {
+          "combinator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Combinator"
+              }
+            ],
+            "nullable": true
+          },
+          "comparator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StringComparators"
+              }
+            ],
+            "nullable": true
+          },
+          "options": {
+            "type": "string",
+            "nullable": true
+          },
+          "userValue": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "SortColumn": {
+        "type": "string",
+        "enum": [
+          "IdentityId",
+          "DisplayName",
+          "Creator",
+          "NumPositions",
+          "AssetsSum",
+          "AssetsPrice",
+          "SharePrice",
+          "Description",
+          "CreatedAt",
+          "UpdatedAt",
+          "Status"
+        ]
+      },
+      "SortDirection": {
+        "type": "string",
+        "enum": ["asc", "desc"]
+      },
+      "Status": {
+        "type": "string",
+        "enum": ["pending", "complete", "removed", "error"]
+      },
+      "StatusExplainer": {
+        "type": "string",
+        "enum": ["Pending", "Complete", "Removed"]
+      },
+      "StatusQuery": {
+        "type": "object",
+        "properties": {
+          "combinator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Combinator"
+              }
+            ],
+            "nullable": true
+          },
+          "comparator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EnumComparators"
+              }
+            ],
+            "nullable": true
+          },
+          "options": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StatusExplainer"
+              }
+            ],
+            "nullable": true
+          },
+          "userValue": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Status"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
+      "StringComparators": {
+        "type": "string",
+        "enum": ["eq", "contains", "notEq"]
+      },
+      "SubjectVaultIdQuery": {
+        "type": "object",
+        "properties": {
+          "combinator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Combinator"
+              }
+            ],
+            "nullable": true
+          },
+          "comparator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NumericComparators"
+              }
+            ],
+            "nullable": true
+          },
+          "options": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "userValue": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        }
+      },
+      "UpdateAttestation": {
+        "type": "object",
+        "required": [
+          "amount_staked",
+          "shares",
+          "assets",
+          "fee",
+          "delta_assets"
+        ],
+        "properties": {
+          "amount_staked": {
+            "type": "number",
+            "format": "double"
+          },
+          "assets": {
+            "type": "number",
+            "format": "double"
+          },
+          "creator": {
+            "type": "string",
+            "nullable": true
+          },
+          "creator_id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "delta_assets": {
+            "type": "number",
+            "format": "double"
+          },
+          "fee": {
+            "type": "number",
+            "format": "double"
+          },
+          "shares": {
+            "type": "number",
+            "format": "double"
+          },
+          "status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Status"
+              }
+            ],
+            "nullable": true
+          },
+          "vault_id": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              }
+            ],
+            "nullable": true
+          },
+          "vault_type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/VaultType"
+              }
+            ],
+            "nullable": true
+          },
+          "vault_uuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        }
+      },
+      "UpdateClaim": {
+        "type": "object",
+        "required": ["creator"],
+        "properties": {
+          "counter_vault_id": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              }
+            ],
+            "nullable": true
+          },
+          "counter_vault_uuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "creator": {
+            "type": "string"
+          },
+          "creator_id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "object": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              }
+            ],
+            "nullable": true
+          },
+          "object_id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "predicate": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              }
+            ],
+            "nullable": true
+          },
+          "predicate_id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Status"
+              }
+            ],
+            "nullable": true
+          },
+          "subject": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              }
+            ],
+            "nullable": true
+          },
+          "subject_id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "vault_id": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              }
+            ],
+            "nullable": true
+          },
+          "vault_uuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        }
+      },
+      "UpsertUser": {
+        "type": "object",
+        "required": ["wallet"],
+        "properties": {
+          "api_key": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "did": {
+            "type": "string",
+            "nullable": true
+          },
+          "display_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "image": {
+            "type": "string",
+            "nullable": true
+          },
+          "role": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Role"
+              }
+            ],
+            "nullable": true
+          },
+          "wallet": {
+            "type": "string"
+          }
+        }
+      },
+      "User": {
+        "type": "object",
+        "required": ["id", "created_at", "updated_at", "wallet", "role"],
+        "properties": {
+          "api_key": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "did": {
+            "type": "string",
+            "nullable": true
+          },
+          "display_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "image": {
+            "type": "string",
+            "nullable": true
+          },
+          "last_login": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "role": {
+            "$ref": "#/components/schemas/Role"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "wallet": {
+            "type": "string"
+          }
+        }
+      },
+      "UserPresenter": {
+        "type": "object",
+        "required": ["id", "created_at", "updated_at", "wallet", "role"],
+        "properties": {
+          "api_key": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "did": {
+            "type": "string",
+            "nullable": true
+          },
+          "display_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "image": {
+            "type": "string",
+            "nullable": true
+          },
+          "role": {
+            "$ref": "#/components/schemas/Role"
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "wallet": {
+            "type": "string"
+          }
+        }
+      },
+      "VaultIdQuery": {
+        "type": "object",
+        "properties": {
+          "combinator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Combinator"
+              }
+            ],
+            "nullable": true
+          },
+          "comparator": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NumericComparators"
+              }
+            ],
+            "nullable": true
+          },
+          "options": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "userValue": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        }
+      },
+      "VaultType": {
+        "type": "string",
+        "enum": ["Affirmative", "Negative"]
+      }
+    }
+  }
+}

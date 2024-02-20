@@ -43,6 +43,14 @@
 * [Claim](api/claim.md)
 * [Query](api/query.md)
 
+## ⛓ CONTRACT INTERACTIONS
+
+* [Overview](contract-interactions/overview.md)
+* [createAtom](contract-interactions/createatom.md)
+* [createTriple](contract-interactions/createtriple.md)
+* [depositAtom and depositTriple](contract-interactions/depositatom-and-deposittriple.md)
+* [redeemAtom and redeemTriple](contract-interactions/redeematom-and-redeemtriple.md)
+
 ## 🔮 Example Apps
 
 * [Remix Template](example-apps/remix-template.md)
