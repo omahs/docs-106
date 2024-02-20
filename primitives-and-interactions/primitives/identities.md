@@ -8,7 +8,7 @@ description: Identities form the building blocks of knowledge in the Intuition s
 
 **Identities** are the smallest "unit of knowledge" and are used to represent any entity. Identities create persistent, portable, and decentralized identifiers enabling you to refer to any entity consistently across the Internet.
 
-![](../../.gitbook/assets/intuition-who-we-are.jpeg)
+<figure><img src="../../.gitbook/assets/intuition-who-we-are.jpeg" alt="" width="563"><figcaption></figcaption></figure>
 
 ### Understanding Identities
 
