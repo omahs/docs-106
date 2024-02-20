@@ -22,6 +22,7 @@
   * [Claims](primitives-and-interactions/primitives/claims.md)
 * [Interacations](primitives-and-interactions/interacations/README.md)
   * [Attestations](primitives-and-interactions/interacations/attestations.md)
+  * [Querying](primitives-and-interactions/interacations/query.md)
 
 ## 🌐 Protocol and Contracts
 
@@ -41,7 +42,6 @@
   * [Retrieve an Identity](api/identity/retrieve-an-identity.md)
   * [Update an Identity](api/identity/update-an-identity.md)
 * [Claim](api/claim.md)
-* [Query](api/query.md)
 
 ## ⛓ CONTRACT INTERACTIONS
 
