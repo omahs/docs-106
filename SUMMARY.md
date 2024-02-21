@@ -43,7 +43,7 @@
   * [Update an Identity](api/identity/update-an-identity.md)
 * [Claim](api/claim.md)
 
-## ⛓ CONTRACT INTERACTIONS
+## ⛓ Contract Interactions
 
 * [Overview](contract-interactions/overview.md)
 * [createAtom](contract-interactions/createatom.md)
