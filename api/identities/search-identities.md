@@ -6,51 +6,56 @@ description: >-
 
 # Search Identities
 
-### Overview
+`GET` to `/identities/search`
 
-`GET` to `/identity/search`
+Searches all Identities and returns a paginated list of Identities that meet the search criteria.
 
-This endpoint allows for searching Identities based on specific _query parameters_. It returns a _paginated list_ of Identities that match the query parameters.
-
+```bash
+GET https://dev.intuition-api.com/identities/search?<Query_Parameters>
 ```
-GET https://dev.intuition-api.com/identity/search?<Query_Parameters>
-```
-
-#### Security
-
-This request requires a valid API Key to be included with each request.
-
-#### Headers
-
-* `Content-Type: application/json`
-* `x-api-key: <Your_API_Key>`
-
-#### Query Parameters
-
-(TBD)
-
-#### Responses
-
-**200 OK**: Successful retrieval of identities. The response includes:
-
-* `data`: An array of identities matching the query.
-* `limit`: The limit on the number of identities returned.
-* `page`: The current page number in the pagination sequence.
-* `total`: The total number of identities available.
-
-### Examples
 
 {% tabs %}
+{% tab title="Fetch" %}
+```typescript
+  await fetch(`${apiUrl}/identities/search?${queryParams}`, {
+      method: 'GET',
+      "headers": {
+        "Content-Type": "application/json",
+        "x-api-key": <API_KEY>
+      },
+    })
+```
+{% endtab %}
+
 {% tab title="Curl" %}
 ```bash
-curl "https://dev.intuition-api.com/identity?<Your_Query_Parameters>" \
+curl "https://dev.intuition-api.com/identities/search?<Query_Parameters>" \
      -H "Content-Type: application/json" \
-     -H "x-api-key: <Your_API_Key>" \
+     -H "x-api-key: <API_Key>" \
      -X GET
 ```
 
-Replace the `<Your_API_Key>` with your valid API Key.
+Replace the `<API_Key>` with your valid API Key.
 
-Replace the `<Your_Query_Parameters>` with any _query parameters_ you want to include, such as `displayName`.
+Replace the `<Query_Parameters>` with _query parameters_ you want to include.
+{% endtab %}
+
+{% tab title="Remix" %}
+
 {% endtab %}
 {% endtabs %}
+
+### Security
+
+This request requires a valid API Key to be included with each request.
+
+### Headers
+
+* `Content-Type: application/json`
+* `x-api-key: <API_Key>`
+
+### Query Parameters
+
+<table><thead><tr><th width="241">Parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>page</code></td><td><br>Current page in sequence</td></tr><tr><td><code>limit</code></td><td><code>number</code><br><br>Max number of items returned on single page<br>Example: 1</td></tr><tr><td><code>sortBy</code></td><td><code>string</code> <br><br>Field to sort by. Default is <code>created_at</code><br>Example: "display_name"</td></tr><tr><td><code>direction</code></td><td><code>string</code> - "desc" or "asc"<br><br>Direction to sort.Default is "desc"<br>Example: "desc"</td></tr></tbody></table>
+
+### Response

@@ -39,11 +39,13 @@
   * [Fetch all Identities](api/identities/fetch-all-identities.md)
   * [Search Identities](api/identities/search-identities.md)
 * [Identity](api/identity/README.md)
+  * [Fetch an Identity](api/identity/fetch-an-identity.md)
   * [Create an Identity](api/identity/create-an-identity.md)
-  * [Retrieve an Identity](api/identity/retrieve-an-identity.md)
-  * [Update an Identity](api/identity/update-an-identity.md)
 * [Claims](api/claim/README.md)
   * [Fetch all Claims](api/claim/fetch-all-claims.md)
+* [Claim](api/claim-1/README.md)
+  * [Fetch a Claim](api/claim-1/fetch-a-claim.md)
+  * [Create a Claim](api/claim-1/create-a-claim.md)
 
 ## ⛓ Contract Interactions
 

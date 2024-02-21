@@ -14,15 +14,14 @@ GET https://dev.intuition-api.com/identities?<Query_Parameters>
 
 {% tabs %}
 {% tab title="Fetch" %}
-```typescript
-   await fetch(`${apiUrl}/identities?${queryParams}`, {
+<pre class="language-typescript"><code class="lang-typescript">   await fetch(`${apiUrl}/identities?${queryParams}`, {
       method: 'GET',
       "headers": {
-        "Content-Type": "application/json",
-        "x-api-key": <API_KEY>
+<strong>        "Content-Type": "application/json",
+</strong>        "x-api-key": &#x3C;API_KEY>
       },
     })
-```
+</code></pre>
 {% endtab %}
 
 {% tab title="Curl" %}
