@@ -132,8 +132,6 @@ type Claim = {
         vault_id: string;
         created_at: string;
         updated_at: string;
-        creator: 
-        
     };
 }
 

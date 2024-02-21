@@ -1,12 +1,14 @@
 ---
-description: '`GET` request to `/identity/:id` to fetch that Identity by `identity_id`.'
+description: >-
+  `GET` request to `/identity/:id` to fetch an Identity that matches the
+  provided `identity_id`.
 ---
 
 # Fetch an Identity
 
 `GET` to `/identity/:id`
 
-Retrieves a list of Identities. Returns a _paginated list_ of Identities.
+Retrieves an Identity that matches the provided `id`.
 
 ```bash
 GET https://dev.intuition-api.com/identity/:id
