@@ -394,3 +394,49 @@ mapping(uint256 => bool) public isTriple;
   * `uint256 id`: Vault ID.
 * **Outputs**:
   * `bool`: Indicates whether the specified vault ID corresponds to a triple.
+
+
+
+### New Features
+
+In this section, we aim to provide comprehensive insights into the contract's features, emphasizing security, upgradeability, and operational transparency. These additions underscore our commitment to fostering a secure, efficient, and community-driven ecosystem.
+
+#### 1. Pausability
+
+The EthMultiVault contract incorporates a mechanism to pause specific methods, ensuring user security and safety, and facilitating safe resolutions in emergency situations. This feature is paramount for maintaining the integrity of operations and safeguarding assets under unforeseen circumstances. The methods that can be paused include:
+
+* `createAtom`
+* `createAtomCompressed`
+* `batchCreateAtom`
+* `batchCreateAtomCompressed`
+* `createTriple`
+* `batchCreateTriple`
+* `depositAtom`
+* `depositTriple`
+* `deployAtomWallet`
+* `redeemAtom`
+* `redeemTriple`
+
+This pausability feature is crucial for preemptive measures against potential vulnerabilities or during critical updates to ensure uninterrupted and secure service.
+
+#### 2. Emergency Mode
+
+Upon activating the pause function, the contract automatically transitions into emergency mode. This mode is a critical feature that pauses all functions listed in the Pausability section and activates specific methods for emergency withdrawals of assets from atom and triple vaults. Emergency withdrawals are executed in batches and are solely performed by the contract admin. This measure is a last resort, employed when the contract cannot be upgraded safely or in scenarios where an immediate intervention is required for asset protection.
+
+#### 3. Upgradeability
+
+The current architecture of our EthMultiVault contract utilizes the EIP-1967 Transparent Proxy pattern, specifically through the `TransparentUpgradeableProxy` by OpenZeppelin. This pattern ensures that the contract remains transparent and upgradeable, aligning with our commitment to transparency and community trust. The upgrade process is managed by a separate ProxyAdmin contract, which is presently controlled by an address associated with our team. However, plans are underway to transition this mechanism to a multisig arrangement, potentially incorporating prominent community members. This evolution aims to bolster trust and decentralize administrative control, enhancing the security and resilience of the contract's upgradeability.
+
+
+
+### Latest Deployments
+
+The latest deployment of the Intuition protocol contracts has been executed on the OP Sepolia testnet. Below are the addresses of the key smart contracts in the system:
+
+**Optimism Sepolia**
+
+* **EthMultiVault Proxy**: [https://sepolia-optimism.etherscan.io/address/0x3A169e3b7EadAB76870D4c510a9DaA3a75618b69](https://sepolia-optimism.etherscan.io/address/0x3A169e3b7EadAB76870D4c510a9DaA3a75618b69)
+* **EthMultiVault Implementation**: [https://sepolia-optimism.etherscan.io/address/0xd2057bF9EB265897CEA5658b7013C3b3f9D779EA](https://sepolia-optimism.etherscan.io/address/0xd2057bF9EB265897CEA5658b7013C3b3f9D779EA)
+* **ProxyAdmin**: [https://sepolia-optimism.etherscan.io/address/0xc4082Ba087Fd36FA199cA27d03A36EE947A9Cb46](https://sepolia-optimism.etherscan.io/address/0xc4082Ba087Fd36FA199cA27d03A36EE947A9Cb46)
+
+These deployments are a testament to our ongoing efforts to test, iterate, and validate the functionalities of our contracts in a controlled environment, ensuring robustness and reliability before mainnet deployment.
