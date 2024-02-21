@@ -33,6 +33,7 @@
 
 ## 🪄 API
 
+* [API Information](api/api-information.md)
 * [API Key Authentication](api/api-key-authentication.md)
 * [Identities](api/identities/README.md)
   * [Fetch all Identities](api/identities/fetch-all-identities.md)

@@ -11,12 +11,12 @@ description: '`GET` request to `/claims` to retrieve all Claims in a paginated l
 This endpoint fetches all Claims based on the provided _query parameters_. Returns a _paginated list_ of Claims.
 
 ```bash
-GET https://dev.intuition-api.com/claims?<Query_Parameters>
+GET https://dev.intuition-api.com/claims
 ```
 
 #### Security
 
-This request requires a valid API Key to be included with each request.
+This request requires a valid API Key to be included with each request. Include your valid API Key as the value for the `x-api-key` header.
 
 #### Headers
 
@@ -32,12 +32,16 @@ This request requires a valid API Key to be included with each request.
 {% tabs %}
 {% tab title="Curl" %}
 ```bash
-curl "https://dev.intuition-api.com/claims?<Your_Query_Parameters>" \
+curl "https://dev.intuition-api.com/claims" \
      -H "Content-Type: application/json" \
      -H "x-api-key: <Your_API_Key>" \
      -X GET
 ```
 
 Replace the `<Your_API_Key>` with your valid API Key.
+{% endtab %}
+
+{% tab title="TypeScript" %}
+
 {% endtab %}
 {% endtabs %}
