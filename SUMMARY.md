@@ -41,7 +41,8 @@
   * [Create an Identity](api/identity/create-an-identity.md)
   * [Retrieve an Identity](api/identity/retrieve-an-identity.md)
   * [Update an Identity](api/identity/update-an-identity.md)
-* [Claim](api/claim.md)
+* [Claims](api/claim/README.md)
+  * [Fetch all Claims](api/claim/fetch-all-claims.md)
 
 ## ⛓ Contract Interactions
 

@@ -59,7 +59,7 @@ Here is a general example of how you could include your `API_KEY` in a `.env` fi
 API_KEY=your_actual_api_key_here
 ```
 
-Here's a generalized example of how you can then reference your `API_KEY` via environment variables. Each framework will handle this slightly differently, but this high-level approach can be used as a reference:
+This is a generalized example of how you can then reference your `API_KEY` via environment variables. Each framework will handle this slightly differently, but this high-level approach can be used as a reference:
 
 ```typescript
 // yourFile.ts
