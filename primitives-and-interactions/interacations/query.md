@@ -1,12 +1,12 @@
-# Query
+# Querying
 
 ## Querying
 
-Querying verifiable data made easy**Querying: A Core Priority in Intuition**In Intuition, querying is more than just a feature—it's central to our ethos. We've designed our system to allow you to swiftly and flexibly query identities, claims, and attestations, catering to your specific needs with precision.
+In Intuition, querying is more than just a feature—it's central to our ethos. We've designed our system to allow you to swiftly and flexibly query identities, claims, and attestations, catering to your specific needs with precision.
 
 ***
 
-**Query Identities**Delve into the data by querying identities to extract the insights you require. Here's how you can navigate:
+**Query Identities:** Delve into the data by querying identities to extract the insights you require. Here's how you can navigate:
 
 * **By Unique Identifiers**: Search using specific identity IDs.
 * **By Creators**: Find all identities created by specific ETH addresses.
@@ -15,7 +15,7 @@ Querying verifiable data made easy**Querying: A Core Priority in Intuition**In I
 
 ***
 
-**Query Claims**Enhance your understanding by querying claims from various perspectives:
+**Query Claims:** Enhance your understanding by querying claims from various perspectives:
 
 * **By Claim IDs**: Directly fetch claims using their unique identifiers.
 * **By Creators**: Identify claims initiated by specific ETH addresses.
@@ -26,12 +26,4 @@ Querying verifiable data made easy**Querying: A Core Priority in Intuition**In I
 
 ***
 
-**Query Attestations**Deepen your insights by querying attestations:
-
-* **By Attestors**: Find attestations made by specific entities.
-* **By Claim IDs**: Retrieve attestations related to specific claims.
-* **By Timestamp**: Filter attestations based on when they were made, either before or after a specific UNIX timestamp.
-
-***
-
-**Getting Started with Intuition**Ready to explore the possibilities? Check out the Rest API > [Query](https://app.gitbook.com/o/xYyeoT5KBfRZxYH5NYQb/s/cVc9V0gt0E79kdhQIpdk/developer-docs/rest-api/query) section to get started with exploring Intuition!
+**Getting Started with Intuition:** Ready to explore the possibilities? Check out the Rest API > [Query](https://app.gitbook.com/o/xYyeoT5KBfRZxYH5NYQb/s/cVc9V0gt0E79kdhQIpdk/developer-docs/rest-api/query) section to get started with querying Intuition!
