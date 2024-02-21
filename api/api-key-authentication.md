@@ -4,7 +4,7 @@ description: Overview for obtaining and using an Intuition API Key.
 
 # API Key Authentication
 
-Your Intuition API Key serves as the cornerstone of authentication when interacting with the Intuition API. It plays a crucial role in securing and authorizing your requests, ensuring that they are recognized and permitted.
+Your Intuition API Key serves as the cornerstone of authentication when interacting with the Intuition API. It plays a crucial role in securing and authorizing your requests, ensuring that they are recognized and permitted. This is required to use our public API.
 
 ### Getting Your API Key
 
@@ -42,6 +42,10 @@ curl "https://dev.intuition-api.com/identities?<Your_Query_Parameters>" \
 Replace the `<Your_API_Key>` with your valid API Key that you obtained from the API Key Portal.
 {% endtab %}
 {% endtabs %}
+
+### Using Environment Variables
+
+Be sure to follow best practices for protecting your API Key. One way to ensure safety is to use _environment variables_ to prevent it from being leaked client-side on your requests. Be sure to also include this in any `.gitignore` to prevent your `.env` from being included in version control. It's _highly recommended_ to follow this best practice and to avoid hardcoding your API Key value into your codebase.
 
 {% hint style="info" %}
 If you're using Remix, Next.js, or any other frontend framework that supports using `.env` we recommend that you include your API Key and access it via **environment variables** to prevent it from any unintentional client-side leaking.
