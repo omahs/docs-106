@@ -20,7 +20,7 @@
 * [Primitives](primitives-and-interactions/primitives/README.md)
   * [Identities](primitives-and-interactions/primitives/identities.md)
   * [Claims](primitives-and-interactions/primitives/claims.md)
-* [Interacations](primitives-and-interactions/interacations/README.md)
+* [Interactions](primitives-and-interactions/interacations/README.md)
   * [Attestations](primitives-and-interactions/interacations/attestations.md)
   * [Querying](primitives-and-interactions/interacations/query.md)
 
