@@ -33,13 +33,13 @@ Here's how you can use your API Key in a cURL request to the Intuition API, spec
 {% tabs %}
 {% tab title="Curl" %}
 ```bash
-curl "https://dev.intuition-api.com/identities?<Your_Query_Parameters>" \
+curl "https://dev.intuition-api.com/identities?<Query_Parameters>" \
      -H "Content-Type: application/json" \
-     -H "x-api-key: <Your_API_Key>" \
+     -H "x-api-key: <API_Key>" \
      -X GET
 ```
 
-Replace the `<Your_API_Key>` with your valid API Key that you obtained from the API Key Portal.
+Replace the `<API_Key>` with your valid API Key that you obtained from the API Key Portal.
 {% endtab %}
 {% endtabs %}
 

@@ -54,16 +54,9 @@ This request requires a valid API Key to be included with each request.
 
 ### Query Parameters
 
-| Parameter   | Description                                         |
-| ----------- | --------------------------------------------------- |
-| `page`      | Filter by `displayName`                             |
-| `limit`     | Filter by `creator` Ethereum address                |
-| `sortBy`    | Filter by `status`, such as `pending` or `complete` |
-| `direction` |                                                     |
+<table><thead><tr><th width="241">Parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>page</code></td><td><br>Current page in sequence</td></tr><tr><td><code>limit</code></td><td><code>number</code><br><br>Max number of items returned on single page<br>Example: 1</td></tr><tr><td><code>sortBy</code></td><td><code>string</code> <br><br>Field to sort by. Default is <code>created_at</code><br>Example: "display_name"</td></tr><tr><td><code>direction</code></td><td><code>string</code> - "desc" or "asc"<br><br>Direction to sort.Default is "desc"<br>Example: "desc"</td></tr></tbody></table>
 
-### Responses
-
-**200 OK**: Successful retrieval of identities.&#x20;
+### Response
 
 This includes the [Paginated Response](../api-information.md#pagination)&#x20;
 
@@ -155,6 +148,14 @@ interface ClaimProps {
   object: Identity | null
 }
 
+export const UserSchema = z.object({
+  did: z.string().optional(),
+  wallet: z.string(),
+  display_name: z.string().optional(),
+  image: z.string().optional(),
+  id: z.string().uuid(),
+})
+
 // if not using Zod, here's an example of the Identity type:
 
 type Identity = {
@@ -182,4 +183,10 @@ type Identity = {
 ```
 {% endtab %}
 {% endtabs %}
+
+#### Response Codes
+
+| Code | Description                  |
+| ---- | ---------------------------- |
+| 200  | Paginated list of Identities |
 
