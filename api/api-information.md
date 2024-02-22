@@ -22,7 +22,7 @@ You can read more about authenticating with API Keys in the [API Key Authenticat
 
 #### Getting Your API Key
 
-We've created a developer API Key Portal for generating your API Key. Our [Dev Quick Start](../getting-started/dev-quick-start.md) includes a walkthrough of this process if you haven't generated your API Key yet. You can always view your current API Key by navigating to the API Key Portal and signing a message. Your API Key is connected to your Ethereum wallet, so you can always retrieve your current API Key by following this same process.
+We've created a developer API Key Portal for generating your API Key. Our [Dev Quick Start](../getting-started/dev-quick-start.md) includes a walkthrough of this process if you haven't generated your API Key yet. You can always view your current API Key by navigating to the [API Key Portal](https://intuition.sh) and signing a message. Your API Key is connected to your Ethereum wallet, so you can always retrieve your current API Key by following this same process.
 
 <figure><img src="../.gitbook/assets/api-key-5.jpg" alt=""><figcaption><p>Viewing your API Key on the API Key Portal after connecting your Ethereum wallet and signing a message.</p></figcaption></figure>
 
@@ -50,7 +50,7 @@ If you include an invalid API Key in the `x-api-key` header, the API returns a `
 }
 ```
 
-If you're seeing this be sure to check that your API Key is valid. If you need to check or request a new API Key you can visit the API Key Portal.
+If you're seeing this be sure to check that your API Key is valid. If you need to check or request a new API Key you can visit the [API Key Portal](https://intuition.sh).
 
 ### Pagination
 

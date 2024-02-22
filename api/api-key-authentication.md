@@ -8,9 +8,9 @@ Your Intuition API Key serves as the cornerstone of authentication when interact
 
 ### Getting Your API Key
 
-Since your API Key is connected to your Ethereum wallet address, we've created an API Key Portal where you can obtain and view your API Key.
+Since your API Key is connected to your Ethereum wallet address, we've created an [API Key Portal ](https://intuition.sh)where you can obtain and view your API Key.
 
-The [Dev Quick Start](../getting-started/dev-quick-start.md) page contains a walkthrough of this process. You can also go directly to the API Key Portal and sign the message.&#x20;
+The [Dev Quick Start](../getting-started/dev-quick-start.md) page contains a walkthrough of this process. You can also go directly to the [API Key Portal](https://intuition.sh) and sign the message.&#x20;
 
 {% hint style="warning" %}
 #### Remember, your API Key is tied to your Ethereum Address that you signed with in the API Key Portal.  Be sure to keep it safe!

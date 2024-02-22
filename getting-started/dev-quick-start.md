@@ -10,13 +10,13 @@ This guide contains resources and links to help you get started building on top 
 
 ### Getting Your API Key
 
-You need an Intuition API Key to use our public API. We've provided an API Key Portal for quick access to generating and retrieving your API key.&#x20;
+You need an Intuition API Key to use our public API. We've provided an [API Key Portal](https://intuition.sh) for quick access to generating and retrieving your API key.&#x20;
 
 **Prerequisites:** This section assumes that you have an Ethereum wallet and the ability to sign messages through MetaMask, Rainbow, or another supported provider.
 
 #### Step 1:
 
-First, navigate to our API Key Portal and click on the _Connect Wallet_ button:
+First, navigate to our [API Key Portal](https://intuition.sh) and click on the _Connect Wallet_ button:
 
 <figure><img src="../.gitbook/assets/api-key-1.jpg" alt=""><figcaption><p>Click on the Connect Wallet button</p></figcaption></figure>
 
@@ -66,7 +66,7 @@ We welcome feedback! Please reach out with questions, suggestions, and to share 
 ### Links
 
 * [Intuition App Template: Remix](https://github.com/0xIntuition/app-template-remix)
-* Intuition API Key Portal
-* Intuition Portal
+* [Intuition API Key Portal](https://intuition.sh)
+* [Intuition Portal](https://portal.intuition.systems)
 
 ###
