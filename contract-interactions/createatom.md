@@ -1,5 +1,5 @@
 ---
-description: Contract interaction for creating an Atom.
+description: Contract interaction for creating an Identity (Atom).
 ---
 
 # createAtom
@@ -14,7 +14,7 @@ While you can create an Identity through onchain interactions only, it's recomme
 
 ### createAtom Contract Function
 
-We can start by looking at the [createAtom function](../protocol-and-contracts/contract-documentation.md#createatom) in our Protocol and Contracts section.
+We can start by looking at the [createAtom function](../protocol-and-contracts/contract-documentation.md#createatom) in our [Protocol and Contracts](broken-reference) section.
 
 #### createAtom
 
