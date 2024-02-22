@@ -6,7 +6,7 @@ description: Protocol documentation for the Intuition EthMultiVault.sol smart co
 
 ### EthMultiVault.sol
 
-**Inherits:** IEthMultiVault, Initializable, ReentrancyGuardUpgradeable
+**Inherits:** IEthMultiVault, Initializable, ReentrancyGuardUpgradeable, PausableUpgradeable
 
 **Author:** 0xIntuition
 
