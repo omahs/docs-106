@@ -6,11 +6,14 @@ description: Protocol documentation for the Intuition EthMultiVault.sol smart co
 
 ### EthMultiVault.sol
 
-**Inherits:** IEthMultiVault, Initializable, ReentrancyGuardUpgradeable, PausableUpgradeable
+**Inherits:**&#x20;
+
+* IEthMultiVault,&#x20;
+* Initializable, ReentrancyGuardUpgradeable & PausableUpgradeable from OpenZeppelin
 
 **Author:** 0xIntuition
 
-This is the core contract for the Intuition protocol.
+Core contract of the Intuition protocol. Manages the creation and management of vaults associated to Atoms & Triples.
 
 ### State Variables
 

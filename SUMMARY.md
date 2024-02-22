@@ -28,10 +28,11 @@
 
 * [Overview](protocol-and-contracts/overview.md)
 * [Deep Dive](protocol-and-contracts/deep-dive.md)
+* [Latest Deployments](protocol-and-contracts/latest-deployments.md)
 * [EthMultiVault.sol](protocol-and-contracts/contract-documentation.md)
 * [IEthMultiVault.sol Functions](protocol-and-contracts/interfaces.md)
 * [IEthMultiVault.sol Events](protocol-and-contracts/iethmultivault.sol-events.md)
-* [AtomWallet](protocol-and-contracts/atomwallet.md)
+* [AtomWallet.sol](protocol-and-contracts/atomwallet.sol.md)
 
 ## 🪄 API
 

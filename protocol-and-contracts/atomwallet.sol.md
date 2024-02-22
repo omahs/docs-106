@@ -1,31 +1,16 @@
 ---
-description: >-
-  Smart contract documentation for the AtomWallet.sol, one of the Intuition
-  protocol's core contracts.
+description: Protocol documentation for the Intuition AtomWallet.sol smart contract.
 ---
 
-# AtomWallet
-
-### Overview
-
-The AtomWallet contract is a foundational element of the Intuition protocol, acting as an abstract account (wallet) linked to a specific atom. It leverages account abstraction standard (ERC-4337) to enable advanced transaction execution and management capabilities for atom-associated operations within the blockchain environment.
-
-### Inherits
-
-* `BaseAccount` from `@account-abstraction/contracts` package, which provides the basic framework for the account abstraction functionalities.
-* Uses `ECDSA` from OpenZeppelin for cryptographic operations, particularly signature verification.
-
-### Dependencies
-
-* `IEntryPoint` from `@account-abstraction/contracts`: Interface for the EntryPoint contract, which facilitates external interactions with the AtomWallet.
-* `UserOperation:` User operation struct, also imported from `@account-abstraction/contracts`. Contains key transaction-related data, including nonce, sender, calldata, gas limit, maxFeePerGas, maxPriorityFeePerGas, etc.
-* `Errors`: Custom error handling library created by the Intuition protocol.
+# AtomWallet.sol
 
 ### Contract Information
 
-* **Author**: 0xIntuition
-* **License**: MIT
-* **Solidity Version**: ^0.8.18
+**Inherits:** BaseAccount (from `@account-abstraction/contracts`)
+
+**Author**: 0xIntuition
+
+Core contract of the Intuition protocol. This contract is the abstract account associated to a corresponding atom.
 
 ### State Variables
 
