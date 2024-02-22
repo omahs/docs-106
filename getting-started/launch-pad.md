@@ -6,7 +6,7 @@ description: Paths and resources for getting started on your Intuition journey.
 
 Welcome to Intuition, Builder!&#x20;
 
-You can access our Portal app by checking out [app.intuition.systems](https://app.intuition.systems). You can experiment with the flows we've built around interacting with our key primitives such as [Identities](../primitives-and-interactions/primitives/identities.md) and [Claims](../primitives-and-interactions/primitives/claims.md). You can connect your wallet to our Portal, sign the message, and begin exploring!
+You can access our Portal app by checking out [portal.intuition.systems](https://portal.intuition.systems). You can experiment with the flows we've built around interacting with our key primitives such as [Identities](../primitives-and-interactions/primitives/identities.md) and [Claims](../primitives-and-interactions/primitives/claims.md). You can connect your wallet to our Portal, sign the message, and begin exploring!
 
 ### Exploring the Intuition Portal
 

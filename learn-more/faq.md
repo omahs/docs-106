@@ -18,11 +18,7 @@ Intuition enables and incentivizes users to create attestations – or cryptogra
 
 <summary>How does it work?</summary>
 
-Intuition’s protocol and middleware allow developers to easily integrate attestation infrastructure into their own applications, which can permissionlessly create or consume data from Intuition’s shared knowledge graph.&#x20;
-
-
-
-
+Intuition’s protocol and middleware allow developers to easily integrate attestation infrastructure into their own applications, which can permissionlessly create or consume data from Intuition’s shared knowledge graph.
 
 Intuition will also be launching its own application built atop the protocol, functioning as a knowledge graph explorer, and is planning to have human-readable Intuition data regarding wallet addresses displayed directly in popular web wallets.&#x20;
 
@@ -62,42 +58,22 @@ With that being said, anyone is free to build additional tooling or design metho
 
 <details>
 
-<summary>No Gas Fees?</summary>
-
-You may notice there are no gas fees - although certain routes have Ethereum transactions, we have implemented a Paymaster using [EIP-2711](https://eips.ethereum.org/EIPS/eip-2711) which allows us to subsidizes your gas costs. That way you can focus on what matters - building. &#x20;
-
-</details>
-
-<details>
-
 <summary>What am I signing?</summary>
 
-You will sign a message proving you have ownership of the associated ETH address, using both [SIWE](https://docs.login.xyz/sign-in-with-ethereum/quickstart-guide/creating-siwe-messages) & [DIDSession](https://did.js.org/docs/api/classes/did\_session.DIDSession/).&#x20;
-
-* Approving:
-  * A New DID Session
-  * Intuition to make updates to ComposeDB with your DID
+You will sign a message proving you have ownership of the associated ETH address, using both [SIWE](https://docs.login.xyz/sign-in-with-ethereum/quickstart-guide/creating-siwe-messages) & [DIDSession](https://did.js.org/docs/api/classes/did\_session.DIDSession/).   This is also used to instantiate a new DID Session and issue API keys to new developer users.
 
 ```json
-// SIWE Message enabling us to make updates to ComposeDB for your DID 
 {
-    "domain": "intuition.systems",
-    "address": "0xYOUR_ADDRESS",
-    "statement": "I authorize my DID to be used by intuition.systems",
-    "uri": "did:key:YOUR_DID",
-    "version": "0.0.1",
+    "domain": "window.location.host",
+    "address": "0x0",
+    "statement": "Sign in to Intuition",
+    "uri": "window.location.origin",
+    "version": "1",
     "nonce": "bqnxrfyv",
-    "issuedAt": "2023-09-08T06:02:38.298Z",
-    "expirationTime": "2023-09-15T06:02:38.298Z",
-    "chainId": "80001",
-    "resources": [
-        "ceramic://*?model=kjzl6hvfrbw6cb28t1477pp3w1w1lrogvitkksqra4mj6tak7wmcalwihlk1rrk",
-        "ceramic://*?model=kjzl6hvfrbw6c91e0ehhg566qp6siivajonwqfxwpk5rzt5irug1dq0s4eu4ejk",
-        "ceramic://*?model=kjzl6hvfrbw6c6wg0a5ale41scvzjw8e3t6gf6w8j9a192eijp7r68phuais9de"
-    ]
+    "issuedAt": "2024-01-01T00:00:00.000Z",
+    "expirationTime": "2024-02-01T00:00:00.000Z",,
+    "chainId": "11155420",
 }
 ```
-
-This enables us to relay transactions made so that we can metadata updates to the off-chain Metadata in Ceramic for you
 
 </details>

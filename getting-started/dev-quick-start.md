@@ -54,14 +54,10 @@ Check out our [API Key Authentication](../api/api-key-authentication.md) page fo
 
 ### Getting in Touch
 
-We welcome feedback! Please reach out with questions, suggestions, and to share what you've been building! As we build our developer community we'll be expanding&#x20;
+We welcome feedback! Please reach out with questions, suggestions, and to share what you've been building! As we build our developer community we'll be expanding our available resources. We're excited to welcome and support builders.
 
 * For more on Intuition visit [www.intuition.systems](http://www.intuition.systems), follow us on [Twitter](https://twitter.com/0xIntuition), and join our [Discord](https://discord.gg/RcASAxbpHf)
 * For developer inquiries email [devrel@intuition.systems](mailto:devrel@intuition.sysstems)
-
-
-
-
 
 ### Links
 
