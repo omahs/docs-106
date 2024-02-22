@@ -53,9 +53,8 @@ This request requires a valid API Key to be included with each request.
 
 If an Identity is found for the `id` you'll receive back an Identity object.
 
-```json
-{
-  "id": "f9xxxxxx...",
+<pre class="language-json"><code class="lang-json"><strong>{
+</strong>  "id": "f9xxxxxx...",
   "identity_id": "did:intuition:ipfs:Xxx",
   "identity_hash": "x...",
   "display_name": "JP",
@@ -79,7 +78,7 @@ If an Identity is found for the `id` you'll receive back an Identity object.
   "conviction_sum": "0",
   "conviction_price": "0"
 },
-```
+</code></pre>
 
 Here is an example [Zod](https://zod.dev/) schema and TypeScript interface you can use for the Identity:
 
