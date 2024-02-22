@@ -54,7 +54,7 @@ Check out our [API Key Authentication](../api/api-key-authentication.md) page fo
 
 ### Tutorial Video
 
-{% embed url="https://youtu.be/2uMznSarm_I" %}
+{% embed url="https://youtu.be/ZCIhHGAymeg" %}
 
 ### Getting in Touch
 
