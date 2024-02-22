@@ -52,6 +52,10 @@ Check out our [API Key Authentication](../api/api-key-authentication.md) page fo
 #### Your API Key is tied to your Ethereum Address that you signed with in the API Key Portal.  Be sure to keep it safe!
 {% endhint %}
 
+### Tutorial Video
+
+{% embed url="https://youtu.be/2uMznSarm_I" %}
+
 ### Getting in Touch
 
 We welcome feedback! Please reach out with questions, suggestions, and to share what you've been building! As we build our developer community we'll be expanding our available resources. We're excited to welcome and support builders.
