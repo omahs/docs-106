@@ -47,7 +47,7 @@
 
 ## ⛓ Contract Interactions
 
-* [Overview](contract-interactions/overview.md)
+* [Getting Started](contract-interactions/getting-started.md)
 * [createAtom](contract-interactions/createatom.md)
 * [createTriple](contract-interactions/createtriple.md)
 * [depositAtom and depositTriple](contract-interactions/depositatom-and-deposittriple.md)
