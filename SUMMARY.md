@@ -67,3 +67,4 @@
 ## ⚖️ Legal
 
 * [Terms](legal/terms.md)
+* [Policies](legal/policies.md)
