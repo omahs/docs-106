@@ -1,7 +1,6 @@
 # Table of contents
 
-* [👁 Intuition Docs](README.md)
-* [👋 Introduction](introduction.md)
+* [👋 Introduction](README.md)
 
 ## 💫 Links
 
