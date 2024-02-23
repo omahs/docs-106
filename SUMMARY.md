@@ -34,6 +34,14 @@
 * [IEthMultiVault.sol Events](protocol-and-contracts/iethmultivault.sol-events.md)
 * [AtomWallet.sol](protocol-and-contracts/atomwallet.sol.md)
 
+## ⛓ Contract Interactions
+
+* [Getting Started](contract-interactions/getting-started.md)
+* [createAtom](contract-interactions/createatom.md)
+* [createTriple](contract-interactions/createtriple.md)
+* [depositAtom and depositTriple](contract-interactions/depositatom-and-deposittriple.md)
+* [redeemAtom and redeemTriple](contract-interactions/redeematom-and-redeemtriple.md)
+
 ## 🪄 API
 
 * [API Information](api/api-information.md)
@@ -47,14 +55,6 @@
   * [Fetch all Claims](api/claim/fetch-all-claims.md)
   * [Fetch a Claim](api/claim/fetch-a-claim.md)
   * [Create a Claim](api/claim/create-a-claim.md)
-
-## ⛓ Contract Interactions
-
-* [Getting Started](contract-interactions/getting-started.md)
-* [createAtom](contract-interactions/createatom.md)
-* [createTriple](contract-interactions/createtriple.md)
-* [depositAtom and depositTriple](contract-interactions/depositatom-and-deposittriple.md)
-* [redeemAtom and redeemTriple](contract-interactions/redeematom-and-redeemtriple.md)
 
 ## 🔮 Example Apps
 
