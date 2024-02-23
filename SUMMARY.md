@@ -12,7 +12,7 @@
 * [🚀 Launch Pad](getting-started/launch-pad.md)
 * [⚡ Dev Quick Start](getting-started/dev-quick-start.md)
 * [👁 Tutorial](getting-started/tutorial.md)
-* [🚧 Changelog](getting-started/changelog.md)
+* [Changelog](getting-started/changelog.md)
 
 ## 🤝 Primitives and Interactions
 
@@ -55,10 +55,12 @@
   * [Fetch a Claim](api/claim/fetch-a-claim.md)
   * [Create a Claim](api/claim/create-a-claim.md)
 
-## 🔮 Example Apps
+## 🔮 Guides
 
-* [Remix Template](example-apps/remix-template.md)
-* [Next.js Template](example-apps/next.js-template.md)
+* [Starter Templates](guides/starter-templates/README.md)
+  * [Remix and Vite Template](guides/starter-templates/remix-and-vite-template.md)
+  * [Remix Template](guides/starter-templates/remix-template.md)
+* [Example Apps](guides/example-apps.md)
 
 ## 👩💻 Learn More
 

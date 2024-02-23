@@ -13,10 +13,6 @@ We're excited to be building with our community of builders and users. We welcom
 * [Mirror](https://mirror.xyz/0x0bcAFff6B45769B53DE34169f08AB220d2b9F910)
 * [Intuition Website](https://intuition.systems)
 
-### GitHub
-
-(To be added)
-
 ### Recent Media & Appearances
 
 * [Decrypt: How On-Chain Attestations Unlock Blockchain's Most Valuable Use Cases](https://decrypt.co/199326/how-on-chain-attestations-unlock-blockchains-most-valuable-use-cases)
@@ -28,4 +24,7 @@ We're excited to be building with our community of builders and users. We welcom
 Please reach out with any questions or if you need any support. We welcome feedback and questions!
 
 * Join our [Discord](https://discord.gg/0xintuition) if you haven't already
-* You can also (Email us) with specific questions and feedback.\
+* For general support questions, email [support@intuition.systems](mailto:support@intuition.systems)
+* For feedback on the portal, email [feedback@intuition.systems](mailto:feedback@intuition.systems)
+* For developer inquiries, email [devrel@intuition.systems](mailto:devrel@intuition.systems)
+* For press inquiries, email [press@intuition.systems](mailto:press@intuition.systems)
