@@ -4,13 +4,48 @@ description: '`POST` request to `/identities` to create an Identity.'
 
 # Create an Identity
 
-`POST` to `/identities`
+`POST` to `/identity`
 
 Creates an offchain Identity. Consider pairing this with [createAtom](../../contract-interactions/createatom.md) for onchain Identity creation. The Intuition Portal user journey for creating a Identity combines both of these interactions.
 
 ```bash
-GET https://dev.intuition-api.com/identities
+POST https://dev.intuition-api.com/identity
 ```
+
+{% tabs %}
+{% tab title="Fetch" %}
+<pre class="language-typescript"><code class="lang-typescript"><strong>   await fetch(`${apiUrl}/identity`, {
+</strong>      method: 'POST',
+      "headers": {
+<strong>        "Content-Type": "application/json",
+</strong>        "x-api-key": &#x3C;API_KEY>
+      },
+      "body": {
+         "display_name": "JP", // Required display name for Identity
+         "creator": "0x...81", // Ethereum address for Identity creator
+         "description": "It is JP.", // Optional description for identity
+         "image": "https://my-image.com/me.jpg", // Optional image for Identity
+         "external_reference": "https://github.com", // Optional link for Identity
+      }
+    })
+</code></pre>
+{% endtab %}
+
+{% tab title="Curl" %}
+```bash
+curl -X POST "https://dev.intuition-api.com/identity" \
+     -H "Content-Type: application/json" \
+     -H "x-api-key: <API_KEY>" \
+     -d '{
+           "display_name": "JP",
+           "creator": "0x...81",
+           "description": "It is JP.",
+           "image": "https://my-image.com/me.jpg",
+           "external_reference": "https://github.com",
+         }'
+```
+{% endtab %}
+{% endtabs %}
 
 #### Security <a href="#security" id="security"></a>
 
@@ -60,7 +95,7 @@ If an Identity is successfully created you'll receive the Identity object for th
 Here is an example [Zod](https://zod.dev/) schema and TypeScript interface you can use for the Identity:
 
 {% tabs %}
-{% tab title="First Tab" %}
+{% tab title="Zod" %}
 ```typescript
 export const IdentitySchema = z.object({
   identity_id: z.string(),
@@ -82,11 +117,11 @@ export const IdentitySchema = z.object({
   isUser: z.boolean().optional(),
   user_conviction: z.string().optional(), // bigint
   user_conviction_value: z.string().optional(), // bigint
-})
+}
 ```
 {% endtab %}
 
-{% tab title="Second Tab" %}
+{% tab title="Interface" %}
 ```typescript
 // if using Zod, you can directly infer:
  
@@ -130,8 +165,6 @@ type Identity = {
     isUser?: string;
     user_conviction?: string;
     user_conviction_value?: string;
-}
-
 ```
 {% endtab %}
 {% endtabs %}
