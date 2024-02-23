@@ -1,4 +1,4 @@
-# Page
+# 👁 Intuition Docs
 
 Follow your Intuition.
 
