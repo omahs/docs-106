@@ -8,6 +8,8 @@ description: Instructions and pointers for how to get started building on Intuit
 
 This guide contains resources and links to help you get started building on top of Intuition. These steps provide the most direct way to get up and running with our resources. We'll continue to refine and improve this process so be sure to check back for improvements as we receive developer feedback!
 
+You can either read through the next section for a step-by-step walkthrough or [jump right to our video tutorial.](dev-quick-start.md#tutorial-video)
+
 ### Getting Your API Key
 
 You need an Intuition API Key to use our public API. We've provided an [API Key Portal](https://intuition.sh) for quick access to generating and retrieving your API key.&#x20;
@@ -55,6 +57,14 @@ Check out our [API Key Authentication](../api/api-key-authentication.md) page fo
 ### Tutorial Video
 
 {% embed url="https://youtu.be/ZCIhHGAymeg" %}
+Here is a Quick Start Onboarding video that covers the process outlined in the guide.
+{% endembed %}
+
+### Next Steps
+
+Once you have your API Key you're ready to start building! You can dive right in by cloning one of our "batteries included" starters or explore our documentation for our API, contract interactions, and protocol.
+
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td>🪄 Starter Templates</td><td>Clone one of our starter templates and start building.</td><td></td><td><a href="../guides/starter-templates.md">starter-templates.md</a></td></tr><tr><td></td><td>🪄 <strong>Explore our API</strong></td><td>Explore our API docs and begin interacting with our public REST API.</td><td></td><td><a href="broken-reference">Broken link</a></td></tr><tr><td></td><td>🪄 <strong>Contract Interactions</strong></td><td>Explore our onchain contract interaction examples.</td><td></td><td><a href="broken-reference">Broken link</a></td></tr><tr><td></td><td>🪄 <strong>Protocol and Contracts</strong> </td><td>Read through our protocol and contract documentation.</td><td></td><td><a href="broken-reference">Broken link</a></td></tr></tbody></table>
 
 ### Getting in Touch
 
@@ -65,8 +75,5 @@ We welcome feedback! Please reach out with questions, suggestions, and to share 
 
 ### Links
 
-* [Intuition App Template: Remix](https://github.com/0xIntuition/app-template-remix)
 * [Intuition API Key Portal](https://intuition.sh)
 * [Intuition Portal](https://portal.intuition.systems)
-
-###

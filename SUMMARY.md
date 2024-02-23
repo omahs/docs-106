@@ -11,7 +11,6 @@
 * [🏗️ Architecture](getting-started/architecture.md)
 * [🚀 Launch Pad](getting-started/launch-pad.md)
 * [⚡ Dev Quick Start](getting-started/dev-quick-start.md)
-* [👁️ Tutorial](getting-started/tutorial.md)
 * [Changelog](getting-started/changelog.md)
 
 ## 🤝 Primitives and Interactions
@@ -58,7 +57,6 @@
 ## 🔮 Guides
 
 * [Starter Templates](guides/starter-templates.md)
-* [Example Apps](guides/example-apps.md)
 
 ## 👩‍💻 Learn More
 
