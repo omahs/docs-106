@@ -6,12 +6,12 @@
 
 * [🌐 Community](links/community.md)
 
-## 🗺 Getting Started
+## 🗺️ Getting Started
 
-* [🏗 Architecture](getting-started/architecture.md)
+* [🏗️ Architecture](getting-started/architecture.md)
 * [🚀 Launch Pad](getting-started/launch-pad.md)
 * [⚡ Dev Quick Start](getting-started/dev-quick-start.md)
-* [👁 Tutorial](getting-started/tutorial.md)
+* [👁️ Tutorial](getting-started/tutorial.md)
 * [Changelog](getting-started/changelog.md)
 
 ## 🤝 Primitives and Interactions
@@ -33,7 +33,7 @@
 * [IEthMultiVault.sol Events](protocol-and-contracts/iethmultivault.sol-events.md)
 * [AtomWallet.sol](protocol-and-contracts/atomwallet.sol.md)
 
-## ⛓ Contract Interactions
+## ⛓️ Contract Interactions
 
 * [Getting Started](contract-interactions/getting-started.md)
 * [createAtom](contract-interactions/createatom.md)
@@ -57,18 +57,15 @@
 
 ## 🔮 Guides
 
-* [Starter Templates](guides/starter-templates/README.md)
-  * [Remix and Vite Template](guides/starter-templates/remix-and-vite-template.md)
-  * [Remix Template](guides/starter-templates/remix-template.md)
-  * [Next.js Template](guides/starter-templates/next.js-template.md)
+* [Starter Templates](guides/starter-templates.md)
 * [Example Apps](guides/example-apps.md)
 
-## 👩💻 Learn More
+## 👩‍💻 Learn More
 
 * [📖 Glossary](learn-more/glossary.md)
 * [❓ FAQ](learn-more/faq.md)
 * [🤝 Contact Us and Support](learn-more/contact-us.md)
 
-## ⚖ Legal
+## ⚖️ Legal
 
 * [Terms](legal/terms.md)
