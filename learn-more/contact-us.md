@@ -1,6 +1,10 @@
-# 📬 Contact Us
+---
+description: Contact us if you need support or have questions.
+---
 
-## How can I get in touch?
+# 🤝 Contact Us and Support
+
+## How Can I Get in Touch?
 
 * For more on Intuition visit [www.intuition.systems](http://www.intuition.systems)
 * On social media, follow us on [Twitter](https://twitter.com/0xIntuition), and join our [Discord](https://discord.gg/RcASAxbpHf)

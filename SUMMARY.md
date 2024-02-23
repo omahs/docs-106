@@ -66,7 +66,7 @@
 * [🤝 Contributing](learn-more/contributing.md)
 * [📖 Glossary](learn-more/glossary.md)
 * [❓ FAQ](learn-more/faq.md)
-* [📬 Contact Us](learn-more/contact-us.md)
+* [🤝 Contact Us and Support](learn-more/contact-us.md)
 
 ## ⚖ Legal
 
