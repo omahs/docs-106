@@ -60,6 +60,7 @@
 * [Starter Templates](guides/starter-templates/README.md)
   * [Remix and Vite Template](guides/starter-templates/remix-and-vite-template.md)
   * [Remix Template](guides/starter-templates/remix-template.md)
+  * [Next.js Template](guides/starter-templates/next.js-template.md)
 * [Example Apps](guides/example-apps.md)
 
 ## 👩💻 Learn More

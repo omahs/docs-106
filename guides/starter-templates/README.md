@@ -45,6 +45,6 @@ By handling authentication, scaffolding onchain interactions, and focusing on ef
 
 We'll be adding more of these so keep checking back!
 
-
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td>⚡️ Remix and Vite Template</td><td></td><td></td><td><a href="remix-and-vite-template.md">remix-and-vite-template.md</a></td></tr><tr><td></td><td>💿 Remix Template</td><td></td><td></td><td><a href="remix-template.md">remix-template.md</a></td></tr><tr><td></td><td>△ Next.js Template</td><td></td><td></td><td><a href="next.js-template.md">next.js-template.md</a></td></tr></tbody></table>
 
 * &#x20;[Remix Starter Template](https://github.com/0xIntuition/app-template-remix)
