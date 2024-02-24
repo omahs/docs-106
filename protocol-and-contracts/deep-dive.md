@@ -10,17 +10,6 @@ description: >-
 
 The EthMultiVault system facilitates the creation of Atoms and Triples, which are essential for building and expanding the Intuition Knowledge Graph. This system allows users to contribute knowledge and insights, leveraging Ethereum (ETH) as a medium of exchange and interaction.
 
-### Language Clarification
-
-In our documentation and within the smart contracts, we use specific terms to describe the core components of the Intuition Knowledge Graph. To ensure clarity and consistency across all materials, the following clarifications are provided:
-
-* **Identity and Atom**: These terms are used interchangeably to refer to the fundamental units of knowledge within our ecosystem. Atoms, or Identities, represent data structures that can include subjects, predicates, objects, or even Triples. Each Atom is identified by a unique `uint256` key (vault ID) associated with a bytes array value, encapsulating arbitrary data.
-* **Meme**: Technically identical to an Identity or Atom but applied specifically within the context of the “meme” vault. This special case still adheres to the general data structure of an Atom.
-* **Claims, Attestations, and Triples**: These terms are synonymous and describe structured knowledge statements composed of three Atoms. For simplicity, we will primarily use "Claim" in our documents to refer to these structures.
-* **Depositing and Attesting**: The action of depositing ETH or assets into vaults is akin to attesting or supporting the validity of an Atom or a Triple within our system.
-
-Understanding these terms and their relationships is crucial for navigating the Intuition protocol's architecture and interactions. This clarification aims to harmonize our language use across different platforms and documents, ensuring a cohesive and intuitive experience for all users.
-
 ### Atoms
 
 **Atom**: A fundamental unit within the Intuition ecosystem, representing the smallest piece of knowledge. Atoms can embody various forms of data, such as subjects, predicates, objects, or even Triples themselves. They serve as the building blocks for constructing more complex knowledge representations.&#x20;
@@ -88,6 +77,8 @@ By depositing ETH, a user receives pro-rata shares (minus fees) representing own
 ### Atom & Triple Staking
 
 Staking involves depositing ETH into Vaults corresponding to Atoms or Triples, acquiring Shares in return. This process signifies a user's support for the knowledge entity's validity and grants them a stake in the entity's economic activity, such as accruing fees from future interactions.
+
+**Depositing and Attesting**: The action of staking (depositing ETH or assets) into vaults is akin to attesting or supporting the validity of an Atom or a Triple within our system.
 
 In conclusion, the EthMultiVault system presents a robust framework for decentralized knowledge representation, underpinned by economic incentives. By facilitating the creation and engagement with Atoms and Triples, it underlies a participatory and economically driven knowledge graph within the Intuition ecosystem.
 
