@@ -1,5 +1,5 @@
 ---
-description: Contract interaction staking on an Identity.
+description: Contract interaction staking on an Identities.
 ---
 
 # depositAtom
@@ -25,11 +25,11 @@ function depositAtom(
 * **Outputs**:
   * `uint256 shares`: Amount of shares minted.
 
-Since this function is `payable` it accepts Ether that is sent alongside the call parameters. This can either be set via a UI input, which would allow users to choose the amount that they choose to _stake_ for their Attestation.&#x20;
+Since this function is `payable` it accepts ETH that is sent alongside the call parameters. This can either be set via a UI input, which would allow users to choose the amount that they choose to _stake_ for their Attestation on the Identity.
 
 ### useDeposit Hook
 
-If you're using our [Starter Templates ](../guides/starter-templates.md)we provide this hook for you in the `lib/hooks` folder. This specific hook wraps the functionality for creating an onchain Identity (Atom).
+If you're using our [Starter Templates ](../guides/starter-templates.md)we provide this hook for you in the `lib/hooks` folder. This specific hook wraps the functionality for staking on an Identity (creating an Attestation).
 
 {% code title="useDeposit.tsx" lineNumbers="true" %}
 ```tsx
@@ -96,7 +96,7 @@ const { address } = useAccount()
 // useDeposit() setup
   const depositHook = useDeposit({
     vault: vault_id!,
-    isClaim: claimOrIdentity === 'claim',
+    isClaim: claimOrIdentity === 'identity',
     wallet: user.wallet as `0x${string}`,
     assets: parseUnits(val === '' ? '0' : val, 18),
   })
@@ -151,7 +151,7 @@ The decision to allow users to set their initial deposit value depends on your u
 
 **Deposit amount being dynamically set with user input**
 
-* 3 users go to stake on Claim A:
+* 3 users go to stake on Identity A:
   * User 1 stakes .5 ETH in the positive vault (Attestation _for_)
   * User 2 stakes .1 ETH in the positive vault
   * User 3 stakes .01 ETH in the positive vault
@@ -159,7 +159,7 @@ The decision to allow users to set their initial deposit value depends on your u
 
 **Deposit amount being statically set without user input:**
 
-* 3 users go to stake on Claim B:
+* 3 users go to stake on Identity B:
   * Users 1, 2, and 3 all choose to stake in the positive vault (Attestation _for_)
   * The deposit amount is statically set to .01 ETH for every deposit
 * This decision removes the concepts of _weight_ or _strength_ of belief in the Attestation but still allows for Attestations to serve the purpose of a positive (or negative) social signal.

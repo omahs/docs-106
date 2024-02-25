@@ -39,7 +39,6 @@
 * [createTriple](contract-interactions/createtriple.md)
 * [depositAtom](contract-interactions/depositatom.md)
 * [depositTriple](contract-interactions/deposittriple.md)
-* [redeemAtom and redeemTriple](contract-interactions/redeematom-and-redeemtriple.md)
 
 ## 🪄 API
 

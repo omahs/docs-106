@@ -1,2 +1,0 @@
-# redeemAtom and redeemTriple
-
