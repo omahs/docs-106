@@ -37,7 +37,8 @@
 * [Getting Started](contract-interactions/getting-started.md)
 * [createAtom](contract-interactions/createatom.md)
 * [createTriple](contract-interactions/createtriple.md)
-* [depositAtom and depositTriple](contract-interactions/depositatom-and-deposittriple.md)
+* [depositAtom](contract-interactions/depositatom.md)
+* [depositTriple](contract-interactions/deposittriple.md)
 * [redeemAtom and redeemTriple](contract-interactions/redeematom-and-redeemtriple.md)
 
 ## 🪄 API

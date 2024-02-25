@@ -33,9 +33,9 @@ function createTriple(
 * **Outputs**:
   * `uint256 id`: The vault ID of the created triple.
 
-#### useCreateAtom Hook <a href="#usecreateatom-hook" id="usecreateatom-hook"></a>
+#### useCreateTriple Hook <a href="#usecreateatom-hook" id="usecreateatom-hook"></a>
 
-If you're using our [Remix Starter Template](https://github.com/0xIntuition/app-template-remix) we provide this hook for you in the `lib/hooks` folder.&#x20;
+If you're using our [Starter Templates](../guides/starter-templates.md) we provide this hook for you in the `lib/hooks` folder.&#x20;
 
 This specific hook wraps the functionality for creating an onchain Claim (Triple).
 

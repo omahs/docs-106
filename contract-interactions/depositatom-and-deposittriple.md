@@ -1,2 +1,0 @@
-# depositAtom and depositTriple
-
