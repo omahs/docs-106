@@ -6,7 +6,11 @@ description: >-
 
 # IEthMultiVault.sol Events
 
+### Interface Information
+
 **Author:** 0xIntuition
+
+Events described in the interface of the EthMultiVault contract, used for managing many ERC4626 style vaults in a single contract.
 
 ### Events
 

@@ -6,7 +6,11 @@ description: >-
 
 # IEthMultiVault.sol Functions
 
+### Interface Information
+
 **Author:** 0xIntuition
+
+Functions described in the interface of the EthMultiVault contract, used for managing many ERC4626 style vaults in a single contract.
 
 ### Functions
 

@@ -4,7 +4,7 @@ description: Protocol documentation for the Intuition EthMultiVault.sol smart co
 
 # EthMultiVault.sol
 
-### EthMultiVault.sol
+### Contract Information
 
 **Inherits:**&#x20;
 
@@ -13,7 +13,7 @@ description: Protocol documentation for the Intuition EthMultiVault.sol smart co
 
 **Author:** 0xIntuition
 
-Core contract of the Intuition protocol. Manages the creation and management of vaults associated to Atoms & Triples.
+Core contract of the Intuition protocol. Manages the creation and management of vaults associated with Atoms & Triples.
 
 ### State Variables
 
