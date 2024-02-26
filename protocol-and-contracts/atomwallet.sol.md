@@ -32,8 +32,6 @@ IEntryPoint private immutable _entryPoint;
 
 ### Functions
 
-Here's the combined information for each function in the AtomWallet contract, detailing the function interfaces along with their short descriptions, inputs, and outputs.
-
 #### constructor
 
 Initializes a new AtomWallet with a specified EntryPoint and owner.
@@ -140,7 +138,7 @@ function addDeposit() public payable;
 * **Inputs**: None. (The deposit amount is specified by `msg.value`)
 * **Outputs**: None.
 
-#### Withdraw Deposit
+#### withdrawDeposit
 
 Withdraws a specified amount from the AtomWallet's deposit to a given address. Only the owner can initiate the withdrawal.
 
@@ -152,19 +150,3 @@ function withdrawDepositTo(address payable withdrawAddress, uint256 amount) publ
   * `address payable withdrawAddress`: The address to send the withdrawn funds to.
   * `uint256 amount`: The amount to withdraw.
 * **Outputs**: None.
-
-### Modifier Descriptions
-
-The contract does not explicitly define custom modifiers, but it uses conditions within functions to restrict access to the owner and to validate transaction requests against the EntryPoint or the owner's authority.
-
-### Error Handling
-
-Utilizes the custom `Errors` library for custom error messages, ensuring clarity and specificity in error handling related to the AtomWallet operations.
-
-### Usage Scenarios
-
-The `AtomWallet` contract is designed for:
-
-* Secure execution of transactions linked to an atom within the Intuition protocol.
-* Batch processing of multiple transactions for efficiency and convenience.
-* Managing deposits for transaction fees in the EntryPoint, allowing for flexible account funding and withdrawal.
