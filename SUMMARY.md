@@ -5,6 +5,7 @@
 ## 💫 Links
 
 * [🌐 Community](links/community.md)
+* [📣 Important Callouts](links/important-callouts.md)
 
 ## 🗺️ Getting Started
 
