@@ -5,10 +5,10 @@
 ## 💫 Links
 
 * [🌐 Community](links/community.md)
-* [📣 Important Callouts](links/important-callouts.md)
 
 ## 🗺️ Getting Started
 
+* [📣 Important Callouts](getting-started/important-callouts.md)
 * [🏗️ Architecture](getting-started/architecture.md)
 * [🚀 Launch Pad](getting-started/launch-pad.md)
 * [⚡ Dev Quick Start](getting-started/dev-quick-start.md)
