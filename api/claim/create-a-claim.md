@@ -9,7 +9,7 @@ description: '`POST` request to `/claims` to create a Claim.'
 Creates an offchain Claim. Consider pairing this with [createTriple](../../contract-interactions/createtriple.md) for onchain Claim creation. The Intuition Portal user journey for creating a Claim combines both of these interactions.
 
 ```bash
-POST https://dev.intuition-api.com/claims
+POST https://api.intuition.systems/claims
 ```
 
 {% tabs %}
@@ -32,7 +32,7 @@ POST https://dev.intuition-api.com/claims
 
 {% tab title="Curl" %}
 ```bash
-curl -X POST "https://dev.intuition-api.com/claims" \
+curl -X POST "https://api.intuition.systems/claims" \
      -H "Content-Type: application/json" \
      -H "x-api-key: <API_KEY>" \
      -d '{

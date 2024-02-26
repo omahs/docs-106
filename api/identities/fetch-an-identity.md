@@ -11,7 +11,7 @@ description: >-
 Retrieves an Identity that matches the provided `id`.
 
 ```bash
-GET https://dev.intuition-api.com/identity/:id
+GET https://api.intuition.systems/identity/:id
 ```
 
 {% tabs %}
@@ -28,7 +28,7 @@ GET https://dev.intuition-api.com/identity/:id
 
 {% tab title="Curl" %}
 ```bash
-curl "https://dev.intuition-api.com/identity/<id>" \
+curl "https://api.intuition.systems/identity/<id>" \
      -H "Content-Type: application/json" \
      -H "x-api-key: <API_Key>" \
      -X GET
@@ -161,4 +161,4 @@ type Identity = {
 
 #### Response Codes
 
-<table><thead><tr><th width="314">Code</th><th>Description</th></tr></thead><tbody><tr><td>200</td><td>Identity object that matches the provided <code>id</code></td></tr><tr><td>404</td><td>No identity found for the provided <code>id</code></td></tr></tbody></table>
+<table><thead><tr><th width="314">Code</th><th>Description</th></tr></thead><tbody><tr><td>200</td><td>Identity object that matches the provided <code>id</code></td></tr><tr><td>404</td><td>No Identity found for the provided <code>id</code></td></tr></tbody></table>

@@ -53,6 +53,8 @@
   * [Fetch all Claims](api/claim/fetch-all-claims.md)
   * [Fetch a Claim](api/claim/fetch-a-claim.md)
   * [Create a Claim](api/claim/create-a-claim.md)
+* [Positions](api/positions/README.md)
+  * [Fetch Positions on an Identity](api/positions/fetch-positions-on-an-identity.md)
 
 ## 🔮 Guides
 

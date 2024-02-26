@@ -9,7 +9,7 @@ description: '`POST` request to `/identities` to create an Identity.'
 Creates an offchain Identity. Consider pairing this with [createAtom](../../contract-interactions/createatom.md) for onchain Identity creation. The Intuition Portal user journey for creating a Identity combines both of these interactions.
 
 ```bash
-POST https://dev.intuition-api.com/identity
+POST https://api.intuition.systems/identity
 ```
 
 {% tabs %}
@@ -33,7 +33,7 @@ POST https://dev.intuition-api.com/identity
 
 {% tab title="Curl" %}
 ```bash
-curl -X POST "https://dev.intuition-api.com/identity" \
+curl -X POST "https://api.intuition.systems/identity" \
      -H "Content-Type: application/json" \
      -H "x-api-key: <API_KEY>" \
      -d '{

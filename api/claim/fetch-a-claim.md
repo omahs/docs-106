@@ -9,7 +9,7 @@ description: '`GET` request to `/claim/:id` to fetch a Claim that matches the pr
 Retrieves a Claim that matches the provided `id`.
 
 ```bash
-GET https://dev.intuition-api.com/claim/:id
+GET https://api.intuition.systems/claim/:id
 ```
 
 {% tabs %}
@@ -26,7 +26,7 @@ GET https://dev.intuition-api.com/claim/:id
 
 {% tab title="Curl" %}
 ```bash
-curl "https://dev.intuition-api.com/claim/<id>" \
+curl "https://api.intuition.systems/claim/<id>" \
      -H "Content-Type: application/json" \
      -H "x-api-key: <API_Key>" \
      -X GET

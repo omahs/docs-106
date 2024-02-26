@@ -10,6 +10,8 @@ The Intuition public API is a REST API providing interaction points for building
 
 Our public API is a REST API that supports `GET` and `POST` requests for offchain interactions. Our API supports frameworks that can send HTTP requests, as well as requests sent through Postman or `curl`.  The documentation for each request includes examples for both approaches.
 
+Public API URL: `https://api.intuition.systems`
+
 #### Content Type
 
 API requests need to be encoded as JSON and include the `Content-Type: application/json` header. This is included in the examples for each request, but if you're encountering unexpected issues check that you're encoding as JSON.&#x20;

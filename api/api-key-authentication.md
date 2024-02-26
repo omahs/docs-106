@@ -33,7 +33,7 @@ Here's how you can use your API Key in a cURL request to the Intuition API, spec
 {% tabs %}
 {% tab title="Curl" %}
 ```bash
-curl "https://dev.intuition-api.com/identities?<Query_Parameters>" \
+curl "https://api.intuition.systems/identities?<Query_Parameters>" \
      -H "Content-Type: application/json" \
      -H "x-api-key: <API_Key>" \
      -X GET

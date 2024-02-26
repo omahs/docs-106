@@ -11,7 +11,7 @@ description: >-
 Searches all Identities and returns a paginated list of Identities that meet the search criteria.
 
 ```bash
-GET https://dev.intuition-api.com/identities/search?<Query_Parameters>
+GET https://api.intuition.systems/identities/search?<Query_Parameters>
 ```
 
 {% tabs %}
@@ -29,7 +29,7 @@ GET https://dev.intuition-api.com/identities/search?<Query_Parameters>
 
 {% tab title="Curl" %}
 ```bash
-curl "https://dev.intuition-api.com/identities/search?<Query_Parameters>" \
+curl "https://api.intuition.systems/identities/search?<Query_Parameters>" \
      -H "Content-Type: application/json" \
      -H "x-api-key: <API_Key>" \
      -X GET

@@ -9,7 +9,7 @@ description: '`GET` request to `/claims` to retrieve all Claims in a paginated l
 Retrieves a list of Claims. Returns a _paginated list_ of Claims.
 
 ```bash
-GET https://dev.intuition-api.com/claims?<Query_Parameters>
+GET https://api.intuition.systems?<Query_Parameters>
 ```
 
 {% tabs %}
@@ -27,7 +27,7 @@ GET https://dev.intuition-api.com/claims?<Query_Parameters>
 
 {% tab title="Curl" %}
 ```bash
-curl "https://dev.intuition-api.com/claims?<Query_Parameters>" \
+curl "https://api.intuition.systems/claims?<Query_Parameters>" \
      -H "Content-Type: application/json" \
      -H "x-api-key: <API_Key>" \
      -X GET
@@ -36,10 +36,6 @@ curl "https://dev.intuition-api.com/claims?<Query_Parameters>" \
 Replace the `<API_Key>` with your valid API Key.
 
 Replace the `<Query_Parameters>` with _query parameters_ you want to include.
-{% endtab %}
-
-{% tab title="Remix" %}
-
 {% endtab %}
 {% endtabs %}
 
