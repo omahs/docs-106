@@ -376,7 +376,6 @@ function getVaultStates() external view returns (Types.VaultState[] memory state
 Checks if a given vault ID represents a triple.
 
 ```solidity
-
 mapping(uint256 => bool) public isTriple;
 ```
 
