@@ -27,6 +27,6 @@ Through these varied examples, we see how Claims can describe different aspects 
 
 ### Structuring Knowledge With Claims
 
-Claims transform "unstructured" knowledge, opinions, and thoughts into a structured format. Uniquely identifiable through the keccak256 hash of their components, Claims also acquire a DID ([Decentralized Identifier](https://www.w3.org/TR/did-core/)) and an Ethereum address upon creation. This distinctive identification not only secures their place within the digital realm but also allows Claims to serve as Identities in subsequent Claims.
+Claims transform "unstructured" knowledge, opinions, and thoughts into a structured format. Uniquely identifiable through the keccak256 hash of their components, Claims also acquire an Ethereum address upon creation.
 
 By composing together Identities and Claims, we create a rich network that reflects our understanding of the world. This structured approach enables anyone to share insights, search for information, and make statements about the world around you. It is through this framework that your Intuition becomes a shared resource, allowing for building collective learning and discovery.
