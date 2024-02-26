@@ -72,7 +72,7 @@ export const multivaultAbi = [{...}]
 {% code title="constants.ts" %}
 ```typescript
 export const MULTIVAULT_CONTRACT_ADDRESS =
-  '0x5a4E28Aa014237a9997c6E8F597E5f0076083eF3' // TODO: Change this to NEW IMPLEMENTATION
+  '0x51eB0DCf0411714a3E126376a700532E6FC2e7d4'
 ```
 {% endcode %}
 
