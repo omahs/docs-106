@@ -57,6 +57,7 @@
 ## 🔮 Guides
 
 * [Starter Templates](guides/starter-templates.md)
+* [Use Cases](guides/use-cases.md)
 
 ## 👩‍💻 Learn More
 
